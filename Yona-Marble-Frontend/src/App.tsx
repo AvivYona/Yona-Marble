@@ -5,6 +5,7 @@ import { MainPage } from "./components/MainPage/MainPage";
 import { About } from "./components/About/About";
 import theme from "./theme";
 import { ThemeProvider } from "@mui/material/styles";
+import { CssBaseline } from "@mui/material";
 
 export const App = () => {
   return (
@@ -13,10 +14,11 @@ export const App = () => {
         <Router>
           <Navbar />
           <Routes>
-            <Route path="/" element={<MainPage />} />
+            <Route path="/*" element={<MainPage />} />
             <Route path="/about" element={<About />} />
           </Routes>
         </Router>
+        <CssBaseline />
       </ThemeProvider>
     </div>
   );

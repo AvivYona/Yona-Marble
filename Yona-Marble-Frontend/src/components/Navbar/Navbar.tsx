@@ -2,7 +2,6 @@ import { AppBar, Toolbar, Typography, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import style from "./Navbar.module.css";
 import { NavBarButton } from "./NavBarButton/NavBarButton";
-import { AccessibilityButton } from "../AccessibilityButton/AccessibilityButton";
 export const Navbar = () => {
   const linkMap: Map<string, string> = new Map([
     ["/", "ראשי"],
@@ -13,10 +12,10 @@ export const Navbar = () => {
 
   return (
     <AppBar position="static" className={style.container}>
-      <Toolbar sx={{ justifyContent: "space-between" }}>
+      <Toolbar sx={{ justifyContent: "space-between", height: "6vh" }}>
         <Box display={"flex"}>
           {[...linkMap.keys()].map((key) => (
-            <Box mr={"1vw"}>
+            <Box mr={"1vw"} key={linkMap.get(key)}>
               <NavBarButton to={key} text={linkMap.get(key) ?? ""} />
             </Box>
           ))}
@@ -34,7 +33,6 @@ export const Navbar = () => {
             MyLogo
           </Link>
         </Typography>
-        <AccessibilityButton />
       </Toolbar>
     </AppBar>
   );
