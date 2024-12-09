@@ -30,7 +30,15 @@ export const Navbar = () => {
               width: "wrap",
             }}
           >
-            MyLogo
+            <img
+              src={"/assets/images/Logo/YONA_MARBLE_Heebo.png"}
+              alt="Logo"
+              style={{
+                height: "7vh", // Adjust the size to fit your navbar
+                marginTop: "1vh",
+                objectFit: "contain",
+              }}
+            />
           </Link>
         </Typography>
       </Toolbar>
