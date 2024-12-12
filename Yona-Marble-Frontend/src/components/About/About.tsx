@@ -1,4 +1,4 @@
-import { Box, Typography, Card, CardMedia, CardContent } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import theme from "../../theme";
 import serviceInfo from "../../information/about/serviceInfo.json";
 import { ServiceCard } from "./ServiceCard/ServiceCard";
@@ -10,35 +10,9 @@ export const About = () => {
         p: 4,
         backgroundColor: theme.palette.background.default,
         overflow: "hidden",
+        height: "wrap",
       }}
     >
-      {/* אזור כותרת */}
-      <Box
-        sx={{
-          backgroundImage: "url('/assets/images/About/AboutBackground.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "40vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-        }}
-      >
-        <Typography
-          variant="h2"
-          sx={{
-            backgroundColor: "rgba(0, 0, 0, 0.7)",
-            color: theme.palette.text.primary,
-            p: 2,
-            borderRadius: "8px",
-          }}
-        >
-          אודות החברה
-        </Typography>
-      </Box>
-
-      {/* טקסט אודות */}
       <Box sx={{ mt: 4, maxWidth: "900px", mx: "auto", textAlign: "justify" }}>
         <Typography variant="h4" gutterBottom>
           {aboutInfo.title}
@@ -52,7 +26,6 @@ export const About = () => {
         </Typography>
       </Box>
 
-      {/* אזור כרטיסי שירותים */}
       <Box sx={{ mt: 6 }}>
         <Typography variant="h2" gutterBottom align="center">
           השירותים שלנו

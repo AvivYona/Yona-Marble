@@ -6,6 +6,8 @@ import { About } from "./components/About/About";
 import theme from "./theme";
 import { ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
+import { ContactUs } from "./components/ContactUs/ContactUs";
+import { MarbleKitchen } from "./components/MarbleKitchen/MarbleKitchen";
 
 export const App = () => {
   return (
@@ -16,6 +18,8 @@ export const App = () => {
           <Routes>
             <Route path="/*" element={<MainPage />} />
             <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/marbleKitchen" element={<MarbleKitchen />} />
           </Routes>
         </Router>
         <CssBaseline />

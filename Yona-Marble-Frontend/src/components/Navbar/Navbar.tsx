@@ -1,46 +1,62 @@
-import { AppBar, Toolbar, Typography, Box } from "@mui/material";
+import { AppBar, Toolbar, Box, useMediaQuery, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
 import style from "./Navbar.module.css";
 import { NavBarButton } from "./NavBarButton/NavBarButton";
+
 export const Navbar = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm")); // Breakpoint for responsiveness
+
+  const navbarHeight = isSmallScreen ? "8vh" : "6vh"; // Dynamic navbar height
+  const logoHeight = `calc(${navbarHeight} * 0.8)`; // Set logo height relative to navbar height
+
   const linkMap: Map<string, string> = new Map([
     ["/", "ראשי"],
     ["/about", "אודות"],
     ["/marbleKitchen", "שיש למטבח"],
     ["/marbleBath", "שיש לאמבטיה"],
+    ["/contact", "צור קשר"],
   ]);
 
   return (
-    <AppBar position="static" className={style.container}>
-      <Toolbar sx={{ justifyContent: "space-between", height: "6vh" }}>
-        <Box display={"flex"}>
+    <AppBar
+      position="sticky"
+      className={style.container}
+      sx={{ bgcolor: theme.palette.background.paper }}
+    >
+      <Toolbar
+        sx={{
+          justifyContent: "space-between",
+          height: navbarHeight, // Apply dynamic height to the navbar
+        }}
+      >
+        <Box display="flex" flexWrap={isSmallScreen ? "wrap" : "nowrap"}>
           {[...linkMap.keys()].map((key) => (
-            <Box mr={"1vw"} key={linkMap.get(key)}>
+            <Box
+              mr={{ xs: "0.5vw", sm: "1vw" }} // Adjust spacing based on screen size
+              key={linkMap.get(key)}
+            >
               <NavBarButton to={key} text={linkMap.get(key) ?? ""} />
             </Box>
           ))}
         </Box>
 
-        <Typography variant="h6">
-          <Link
-            to="/"
+        <Link
+          to="/"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+          }}
+        >
+          <img
+            src={"/assets/images/Logo/YONA_MARBLE_Heebo.png"}
+            alt="Logo"
             style={{
-              textDecoration: "none",
-              color: "inherit",
-              width: "wrap",
+              height: logoHeight, // Adjust logo height based on navbar height
+              objectFit: "contain",
             }}
-          >
-            <img
-              src={"/assets/images/Logo/YONA_MARBLE_Heebo.png"}
-              alt="Logo"
-              style={{
-                height: "7vh", // Adjust the size to fit your navbar
-                marginTop: "1vh",
-                objectFit: "contain",
-              }}
-            />
-          </Link>
-        </Typography>
+          />
+        </Link>
       </Toolbar>
     </AppBar>
   );

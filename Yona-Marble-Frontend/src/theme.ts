@@ -62,58 +62,6 @@ const theme = createTheme({
       fontWeight: 600,
     },
   },
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          borderRadius: "8px", // Rounded buttons for a modern look
-          padding: "8px 16px",
-          textTransform: "none", // Avoid forced uppercase
-        },
-        contained: {
-          backgroundColor: "#3f51b5",
-          color: "#ffffff",
-          "&:hover": {
-            backgroundColor: "#2c387e", // Darker shade on hover
-          },
-        },
-        outlined: {
-          borderColor: "#3f51b5",
-          color: "#3f51b5",
-          "&:hover": {
-            borderColor: "#2c387e",
-            backgroundColor: "rgba(63, 81, 181, 0.04)", // Slight background on hover
-          },
-        },
-      },
-    },
-    MuiAppBar: {
-      styleOverrides: {
-        root: {
-          backgroundColor: "#000000", // Solid black navbar
-        },
-      },
-    },
-    MuiPaper: {
-      styleOverrides: {
-        root: {
-          backgroundColor: "#1c1c1c",
-          color: "#ffffff",
-        },
-      },
-    },
-    MuiLink: {
-      styleOverrides: {
-        root: {
-          color: "#d4af37", // Gold color for links
-          textDecoration: "none",
-          "&:hover": {
-            textDecoration: "underline", // Underline on hover
-          },
-        },
-      },
-    },
-  },
 });
 
 export default theme;

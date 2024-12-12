@@ -1,4 +1,4 @@
 .container {
-  background-color: black !important;
   width: 101vw !important;
+  direction: rtl;
 }
