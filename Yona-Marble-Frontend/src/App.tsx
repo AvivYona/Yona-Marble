@@ -1,13 +1,18 @@
 import { Navbar } from "./components/Navbar/Navbar";
 import style from "./App.module.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import { MainPage } from "./components/MainPage/MainPage";
 import { About } from "./components/About/About";
 import theme from "./theme";
 import { ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import { ContactUs } from "./components/ContactUs/ContactUs";
-import { MarbleKitchen } from "./components/MarbleKitchen/MarbleKitchen";
+import { Catalog } from "./components/Catalog/Catalog";
 
 export const App = () => {
   return (
@@ -16,10 +21,11 @@ export const App = () => {
         <Router>
           <Navbar />
           <Routes>
-            <Route path="/*" element={<MainPage />} />
+            <Route path="/" element={<MainPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<ContactUs />} />
-            <Route path="/marbleKitchen" element={<MarbleKitchen />} />
+            <Route path="/catalog" element={<Catalog />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Router>
         <CssBaseline />

@@ -13,8 +13,7 @@ export const Navbar = () => {
   const linkMap: Map<string, string> = new Map([
     ["/", "ראשי"],
     ["/about", "אודות"],
-    ["/marbleKitchen", "שיש למטבח"],
-    ["/marbleBath", "שיש לאמבטיה"],
+    ["/catalog", "קטלוג"],
     ["/contact", "צור קשר"],
   ]);
 
