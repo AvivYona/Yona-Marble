@@ -14,7 +14,7 @@ export const Catalog = () => {
   ];
   return (
     <>
-      <Box sx={{ mt: 4, maxWidth: "900px", mx: "auto", textAlign: "justify" }}>
+      <Box sx={{ mt: 4, maxWidth: "90%", mx: "auto", textAlign: "justify" }}>
         <Typography variant="h5" gutterBottom>
           {marbleKitchenInfo.paragraph1}
         </Typography>
