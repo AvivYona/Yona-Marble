@@ -18,7 +18,7 @@ import { useState } from "react";
 
 export const Navbar = () => {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery("(max-width:660px)"); // Custom breakpoint
+  const isSmallScreen = useMediaQuery("(max-width:720px)"); // Custom breakpoint
   const [drawerOpen, setDrawerOpen] = useState(false); // State to manage drawer open/close
 
   const linkMap: Map<string, string> = new Map([
@@ -78,6 +78,7 @@ export const Navbar = () => {
     >
       <Toolbar
         sx={{
+          display: "flex",
           justifyContent: "space-between",
           height: "8vh", // Apply dynamic height to the navbar
         }}
@@ -90,7 +91,7 @@ export const Navbar = () => {
               aria-label="menu"
               onClick={toggleDrawer(true)}
             >
-              <MenuIcon />
+              <MenuIcon sx={{ fontSize: "6vh" }} />
             </IconButton>
             <Drawer
               anchor="right"
@@ -124,8 +125,8 @@ export const Navbar = () => {
             src={"/assets/images/Logo/YONA_MARBLE_Heebo.png"}
             alt="Logo"
             style={{
-              height: "6vh", // Adjust logo height based on navbar height
               objectFit: "contain",
+              marginTop: "1vh",
             }}
           />
         </Link>

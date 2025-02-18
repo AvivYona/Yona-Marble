@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box, TextField, Button } from "@mui/material";
+import theme from "../../../theme";
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -37,7 +38,7 @@ export const ContactForm = () => {
       if (!value.trim()) {
         newErrors.phone = "שדה חובה.";
       } else if (!/^(05[0-9]{8})$/.test(value)) {
-        newErrors.phone = "הקלד מספר טלפון ישראלי. הקלד רק ספרות.";
+        newErrors.phone = "הקלד מספר טלפון ישראלי.";
       } else {
         newErrors.phone = ""; // Clear error when valid
       }
@@ -158,9 +159,9 @@ export const ContactForm = () => {
             },
             formHelperText: {
               sx: {
-                position: "absolute",
                 right: 0,
                 top: "100%",
+                textAlign: "right",
                 color: "red", // Customize the error color
                 fontSize: "0.875rem", // Customize the font size of the error message
               },
@@ -171,8 +172,13 @@ export const ContactForm = () => {
 
       {/* Submit Button */}
       <Box>
-        <Button variant="contained" color="primary" onClick={handleSubmit}>
-          Send
+        <Button
+          variant="contained"
+          color={"info"}
+          onClick={handleSubmit}
+          sx={{ marginTop: "1vh" }}
+        >
+          שלח
         </Button>
       </Box>
     </Box>

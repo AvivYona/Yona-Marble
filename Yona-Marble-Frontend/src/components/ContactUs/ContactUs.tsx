@@ -33,7 +33,7 @@ export const ContactUs = () => {
           mb: { xs: 4, md: 0 },
         }}
       >
-        <Typography variant="h2" sx={{ mb: 4, textAlign: "center" }}>
+        <Typography variant="h2" sx={{ mt: 2, textAlign: "center" }}>
           צור קשר
         </Typography>
         <IconsBox />
@@ -48,7 +48,7 @@ export const ContactUs = () => {
           justifyContent: "center",
         }}
       >
-        <Typography variant="h3" sx={{ mb: 4, textAlign: "center" }}>
+        <Typography variant="h3" sx={{ mt: 2, textAlign: "center" }}>
           פנו אלינו לייעוץ מקצועי
         </Typography>
         <ContactForm />
