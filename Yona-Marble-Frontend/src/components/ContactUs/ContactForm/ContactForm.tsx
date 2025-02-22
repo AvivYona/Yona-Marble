@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { SyntheticEvent, useState } from "react";
 import { Box, TextField, Button } from "@mui/material";
-import theme from "../../../theme";
-
+import { sendEmail } from "../../../utils/mail";
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -47,11 +46,13 @@ export const ContactForm = () => {
     setErrors(newErrors);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event: SyntheticEvent) => {
+    event.preventDefault(); //This is important, i'm not sure why, but the email won't send without it
     const isValid = validateForm();
     if (isValid) {
+      const formElement = event.currentTarget as HTMLFormElement;
+      sendEmail(formElement);
       console.log("Form Submitted:", formData);
-      alert("Form submitted successfully!");
       setFormData({
         fullName: "",
         phone: "",
@@ -94,6 +95,8 @@ export const ContactForm = () => {
         flexDirection: "column",
         alignItems: "center",
       }}
+      component="form" // Add this line to make it a form
+      onSubmit={handleSubmit} // Add this line to handle form submission
     >
       {/* Full Name Field */}
       <Box sx={{ marginBottom: 3, width: "100%" }}>
@@ -175,7 +178,7 @@ export const ContactForm = () => {
         <Button
           variant="contained"
           color={"info"}
-          onClick={handleSubmit}
+          type="submit" // Change this to type="submit"
           sx={{ marginTop: "1vh" }}
         >
           שלח

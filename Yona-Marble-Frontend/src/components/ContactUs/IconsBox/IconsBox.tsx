@@ -61,6 +61,7 @@ export const IconsBox = () => {
     >
       {iconLinks.map((iconLink) => (
         <IconBox
+          key={iconLink.href}
           href={iconLink.href}
           Icon={iconLink.Icon}
           additionalInfo={iconLink.additionalInfo}
