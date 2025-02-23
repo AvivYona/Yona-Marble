@@ -10,7 +10,6 @@ import theme from "../../../../theme";
 import { useState } from "react";
 
 interface Props {
-  title: string;
   href: string;
   Icon: OverridableComponent<SvgIconTypeMap> & { muiName: string };
   additionalInfo: string;
@@ -32,10 +31,12 @@ export const IconBox = (props: Props) => {
         textAlign: "center",
         justifyContent: "center",
         alignItems: "center",
-        width: "15vw",
-        height: "25vh",
-        borderRight: "1px solid",
-        borderLeft: "1px solid",
+        width: {
+          xs: "100%", // Full width for extra-small screens
+          sm: "50%", // Two cards per row for small-mid screens
+          md: "33%", // Three cards per row for medium+ screens
+        },
+        p: 1,
       }}
     >
       <IconButton
@@ -46,9 +47,8 @@ export const IconBox = (props: Props) => {
           color: theme.palette.text.primary,
         }}
       >
-        <props.Icon sx={{ fontSize: "5rem" }} />
+        <props.Icon sx={{ fontSize: "calc(1.5vh + 1.5vw)" }} />
       </IconButton>
-      <Typography variant="h4">{props.title}</Typography>
       <Tooltip
         title="! הועתק"
         open={showTooltip}
@@ -65,7 +65,7 @@ export const IconBox = (props: Props) => {
           }}
           onClick={() => handleCopyToClipboard(`${props.additionalInfo}`)}
         >
-          <Typography variant="h6">{props.additionalInfo}</Typography>
+          <Typography variant="subtitle2">{props.additionalInfo}</Typography>
         </Box>
       </Tooltip>
     </Box>

@@ -20,10 +20,8 @@ export const ServiceCard = (props: Props) => {
           image={serviceInfo[props.index].imageLocation}
           alt={serviceInfo[props.index].title}
         />
-        <CardContent>
-          <Typography variant="h5" gutterBottom>
-            {serviceInfo[props.index].title}
-          </Typography>
+        <CardContent sx={{ height: "12vh" }}>
+          <Typography variant="h5">{serviceInfo[props.index].title}</Typography>
           <Typography variant="body2">
             {serviceInfo[props.index].description}
           </Typography>

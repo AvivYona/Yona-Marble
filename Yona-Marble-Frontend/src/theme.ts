@@ -6,6 +6,7 @@ const theme = createTheme({
     primary: {
       main: "#3f51b5", // A rich blue tone for primary actions
       contrastText: "#ffffff", // White text for contrast
+      light: "#2a2a2a", //
     },
     secondary: {
       main: "#d4af37", // A gold accent to reflect premium quality
