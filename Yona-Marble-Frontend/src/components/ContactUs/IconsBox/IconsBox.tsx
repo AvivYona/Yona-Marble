@@ -37,7 +37,7 @@ export const IconsBox = () => {
     },
     {
       href: "",
-      additionalInfo: "א׳ - ה׳ 07:00 עד 17:00 \n  ו׳ וערבי חג 07:00 עד 11:00",
+      additionalInfo: "א׳ - ה׳ 08:30 עד 17:00 \n  ו׳ וערבי חג 08:30 עד 12:00",
       Icon: AccessTimeIcon,
     },
 

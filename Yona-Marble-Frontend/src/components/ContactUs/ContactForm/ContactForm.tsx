@@ -177,7 +177,7 @@ export const ContactForm = () => {
       <Box>
         <Button
           variant="contained"
-          color={"info"}
+          color={"inherit"}
           type="submit" // Change this to type="submit"
           sx={{ marginTop: "1vh" }}
         >
