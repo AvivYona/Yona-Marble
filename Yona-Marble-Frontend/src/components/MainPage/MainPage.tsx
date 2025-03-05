@@ -1,8 +1,8 @@
-import { Typography, Box, Container } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import { styled } from "@mui/system";
 import aboutInfo from "../../information/about/aboutInfo.json";
 
-const HeroSection = styled(Box)(({ theme }) => ({
+const HeroSection = styled(Box)(() => ({
   backgroundImage: "url('/assets/images/marble/IMG_6528.JPG')",
   backgroundSize: "cover",
   backgroundPosition: "center",
