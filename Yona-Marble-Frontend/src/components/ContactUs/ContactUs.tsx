@@ -11,26 +11,26 @@ export const ContactUs = () => {
         color: "text.primary",
         p: 4,
         borderRadius: 2,
-        maxWidth: { xs: "90%", sm: "80%", md: "70%" },
+        maxWidth: { xs: "90%", sm: "80%", xl: "80%" },
         margin: "auto",
         mt: "10vh",
         boxShadow: 3,
         display: "flex",
-        flexDirection: { xs: "column", md: "row" },
-        height: { xs: "auto", md: "60vh" },
+        flexDirection: { xs: "column", sm: "column", md: "column", lg: "row" },
+        height: { xs: "auto", lg: "60vh" },
         justifyContent: "space-around",
         alignItems: "center",
       }}
     >
       <Box
         sx={{
-          width: { xs: "100%", md: "25vw" },
+          width: { xs: "100%", lg: "25vw" },
           bgcolor: theme.palette.primary.light,
           borderRadius: "calc(1vh + 1vw)",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          mb: { xs: 4, md: 0 },
+          mb: { xs: 4, lg: 0 },
         }}
       >
         <Typography variant="h2" sx={{ mt: 2, textAlign: "center" }}>
@@ -40,7 +40,7 @@ export const ContactUs = () => {
       </Box>
       <Box
         sx={{
-          width: { xs: "100%", md: "25vw" },
+          width: { xs: "100%", lg: "25vw" },
           bgcolor: theme.palette.primary.light,
           borderRadius: "calc(1vh + 1vw)",
           display: "flex",

@@ -31,11 +31,7 @@ export const IconBox = (props: Props) => {
         textAlign: "center",
         justifyContent: "center",
         alignItems: "center",
-        width: {
-          xs: "100%", // Full width for extra-small screens
-          sm: "50%", // Two cards per row for small-mid screens
-          md: "33%", // Three cards per row for medium+ screens
-        },
+        width: "50%",
         p: 1,
       }}
     >
