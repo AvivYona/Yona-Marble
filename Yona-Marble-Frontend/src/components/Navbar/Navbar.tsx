@@ -122,11 +122,12 @@ export const Navbar = () => {
           }}
         >
           <img
-            src={"/assets/images/Logo/YONA_MARBLE_Heebo.png"}
+            src={"/images/yona-marble-logo.png"}
             alt="Logo"
             style={{
               objectFit: "contain",
-              marginTop: "1vh",
+              paddingTop: "2vh",
+              paddingBottom: "1vh",
             }}
           />
         </Link>

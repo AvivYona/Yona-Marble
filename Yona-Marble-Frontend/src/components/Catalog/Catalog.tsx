@@ -15,15 +15,15 @@ export const Catalog = () => {
   const [selectedImage, setSelectedImage] = useState<string>("");
 
   const itemData = [
-    { img: "/assets/images/About/Services/kitchen.jpg", title: "image" },
-    { img: "/assets/images/About/Services/kitchen.jpg", title: "image" },
-    { img: "/assets/images/About/Services/kitchen.jpg", title: "image" },
-    { img: "/assets/images/About/Services/kitchen.jpg", title: "image" },
-    { img: "/assets/images/About/Services/kitchen.jpg", title: "image" },
-    { img: "/assets/images/About/Services/kitchen.jpg", title: "image" },
-    { img: "/assets/images/About/Services/kitchen.jpg", title: "image" },
-    { img: "/assets/images/About/Services/kitchen.jpg", title: "image" },
-    { img: "/assets/images/About/Services/kitchen.jpg", title: "image" },
+    { img: "/images/kitchen.jpg", title: "image" },
+    { img: "/images/kitchen.jpg", title: "image" },
+    { img: "/images/kitchen.jpg", title: "image" },
+    { img: "/images/kitchen.jpg", title: "image" },
+    { img: "/images/kitchen.jpg", title: "image" },
+    { img: "/images/kitchen.jpg", title: "image" },
+    { img: "/images/kitchen.jpg", title: "image" },
+    { img: "/images/kitchen.jpg", title: "image" },
+    { img: "/images/kitchen.jpg", title: "image" },
   ];
 
   const handleClickOpen = (img: string) => {
@@ -38,7 +38,7 @@ export const Catalog = () => {
   return (
     <>
       <Box sx={{ mt: 2, maxWidth: "90%", mx: "auto", textAlign: "center" }}>
-        <Typography variant="h2">גלריית העבודות</Typography>
+        <Typography variant="h2">גלרית העבודות</Typography>
         <Typography variant="h5" gutterBottom mt={2}>
           {marbleKitchenInfo.paragraph1}
         </Typography>
