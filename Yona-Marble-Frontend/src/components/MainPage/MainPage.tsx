@@ -3,7 +3,7 @@ import { styled } from "@mui/system";
 import aboutInfo from "../../information/about/aboutInfo.json";
 
 const HeroSection = styled(Box)(() => ({
-  backgroundImage: "url('/assets/images/marble/IMG_6528.JPG')",
+  backgroundImage: "url('/images/IMG_6528.JPG')",
   backgroundSize: "cover",
   backgroundPosition: "center",
   height: "92vh",
@@ -37,16 +37,6 @@ export const MainPage = () => {
           </Typography>
         </Box>
       </HeroSection>
-
-      {/* Content Section */}
-      {/* <Container sx={{ py: 6 }}>
-        <Typography variant="h4" align="center" gutterBottom>
-          Our Premium Marble Selection
-        </Typography>
-        <Typography variant="body1" align="center">
-          Choose from a variety of high-quality materials suited for your needs.
-        </Typography>
-      </Container> */}
     </Box>
   );
 };

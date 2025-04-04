@@ -49,7 +49,7 @@ export const ContactUs = () => {
         }}
       >
         <Typography variant="h3" sx={{ mt: 2, textAlign: "center" }}>
-          פנו אלינו לייעוץ מקצועי
+          פנו אלינו ליעוץ מקצועי
         </Typography>
         <ContactForm />
       </Box>
