@@ -5,22 +5,24 @@ import {
   useMediaQuery,
   useTheme,
   IconButton,
-  Drawer,
+  SwipeableDrawer,
   List,
   ListItem,
   ListItemText,
+  Fade,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import style from "./Navbar.module.css";
 import { NavBarButton } from "./NavBarButton/NavBarButton";
 import MenuIcon from "@mui/icons-material/Menu"; // Import the menu icon
+import CloseIcon from "@mui/icons-material/Close"; // Import the close icon
 import { useState } from "react";
 
 export const Navbar = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery("(max-width:720px)"); // Custom breakpoint
   const [drawerOpen, setDrawerOpen] = useState(false); // State to manage drawer open/close
-
+  const navBarHeight = "8vh";
   const linkMap: Map<string, string> = new Map([
     ["/", "ראשי"],
     ["/about", "אודות"],
@@ -42,7 +44,7 @@ export const Navbar = () => {
 
   const list = () => (
     <Box
-      sx={{ width: 250 }}
+      sx={{ width: "100%" }} // Updated marginTop
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
@@ -80,7 +82,7 @@ export const Navbar = () => {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          height: "8vh", // Apply dynamic height to the navbar
+          height: navBarHeight, // Apply dynamic height to the navbar
         }}
       >
         {isSmallScreen ? (
@@ -89,17 +91,78 @@ export const Navbar = () => {
               edge="start"
               color="inherit"
               aria-label="menu"
-              onClick={toggleDrawer(true)}
+              onClick={toggleDrawer(!drawerOpen)} // Updated toggle logic
+              sx={{
+                transition: "transform 0.3s ease-in-out",
+                position: "relative",
+                width: "6vh",
+                height: "6vh",
+              }}
             >
-              <MenuIcon sx={{ fontSize: "6vh" }} />
+              <Fade in={!drawerOpen} timeout={300} unmountOnExit>
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    transform: !drawerOpen ? "scale(1)" : "scale(0)",
+                    transition: "transform 0.3s ease-in-out",
+                  }}
+                >
+                  <MenuIcon sx={{ fontSize: "6vh" }} />
+                </Box>
+              </Fade>
+              <Fade in={drawerOpen} timeout={300} unmountOnExit>
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    transform: drawerOpen ? "scale(1)" : "scale(0)",
+                    transition: "transform 0.3s ease-in-out",
+                  }}
+                >
+                  <CloseIcon
+                    sx={{ fontSize: "6vh", transform: "rotate(180deg)" }}
+                  />
+                </Box>
+              </Fade>
             </IconButton>
-            <Drawer
+            <SwipeableDrawer
               anchor="right"
               open={drawerOpen}
               onClose={toggleDrawer(false)}
+              onOpen={toggleDrawer(true)}
+              disableBackdropTransition={false}
+              disableDiscovery={false}
+              ModalProps={{
+                BackdropProps: {
+                  invisible: true,
+                },
+              }}
+              SlideProps={{
+                timeout: 400,
+                easing: {
+                  enter: "ease-in-out",
+                  exit: "ease-in-out",
+                },
+              }}
+              PaperProps={{
+                sx: {
+                  backgroundColor: "rgba(18, 18, 18, 0.7)",
+                  color: "#fff",
+                  transition: "transform 0.4s ease-in-out",
+                  mt: navBarHeight, // offset to start below the navbar
+                  width: "27vw", // not full width
+                  marginLeft: "auto",
+                  height: "100vh", // Updated to make sidebar full height
+                  borderRadius: 2,
+                  boxShadow: 3,
+                },
+              }}
             >
               {list()}
-            </Drawer>
+            </SwipeableDrawer>
           </>
         ) : (
           <Box display="flex" flexWrap={isSmallScreen ? "wrap" : "nowrap"}>
@@ -128,6 +191,7 @@ export const Navbar = () => {
               objectFit: "contain",
               paddingTop: "2vh",
               paddingBottom: "1vh",
+              width: isSmallScreen ? "60vw" : "auto",
             }}
           />
         </Link>
