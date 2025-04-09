@@ -1,4 +1,4 @@
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, useMediaQuery } from "@mui/material";
 import { styled } from "@mui/system";
 import aboutInfo from "../../information/about/aboutInfo.json";
 
@@ -25,6 +25,7 @@ const HeroSection = styled(Box)(() => ({
 }));
 
 export const MainPage = () => {
+  const isSmallScreen = useMediaQuery("(max-width:720px)");
   return (
     <Box>
       <HeroSection>
@@ -32,7 +33,10 @@ export const MainPage = () => {
           <Typography variant="h1" gutterBottom>
             שיש יונה
           </Typography>
-          <Typography variant="h5" sx={{ width: "30vw" }}>
+          <Typography
+            variant="h5"
+            sx={{ width: isSmallScreen ? "70vw" : "30vw" }}
+          >
             {aboutInfo.title2}
           </Typography>
         </Box>
