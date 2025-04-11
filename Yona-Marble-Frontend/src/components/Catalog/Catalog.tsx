@@ -15,15 +15,12 @@ export const Catalog = () => {
   const [selectedImage, setSelectedImage] = useState<string>("");
 
   const itemData = [
-    { img: "/images/kitchen.jpg", title: "image" },
-    { img: "/images/kitchen.jpg", title: "image" },
-    { img: "/images/kitchen.jpg", title: "image" },
-    { img: "/images/kitchen.jpg", title: "image" },
-    { img: "/images/kitchen.jpg", title: "image" },
-    { img: "/images/kitchen.jpg", title: "image" },
-    { img: "/images/kitchen.jpg", title: "image" },
-    { img: "/images/kitchen.jpg", title: "image" },
-    { img: "/images/kitchen.jpg", title: "image" },
+    { img: "/images/catalog_1.webp", title: "image" },
+    { img: "/images/catalog_2.webp", title: "image" },
+    { img: "/images/catalog_3.webp", title: "image" },
+    { img: "/images/catalog_4.webp", title: "image" },
+    { img: "/images/catalog_5.webp", title: "image" },
+    { img: "/images/catalog_6.webp", title: "image" },
   ];
 
   const handleClickOpen = (img: string) => {
