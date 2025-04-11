@@ -2,11 +2,11 @@
   {
     "title": "שיש למטבח",
     "description": "אנו מספקים פתרונות שיש איכותיים בהתאמה אישית למטבחים שלכם.",
-    "imageLocation": "/public/images/kitchen.jpg"
+    "imageLocation": "images/kitchen.jpg"
   },
   {
     "title": "שיש לאמבט",
     "description": "מבחר רחב של עיצובים לריצוף פנימי וחיצוני שיעניקו לביתכם מראה ייחודי.",
-    "imageLocation": "/assets/images/About/Services/bath2.jpeg"
+    "imageLocation": "images/bath2.jpeg"
   }
 ]
