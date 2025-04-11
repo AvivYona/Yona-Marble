@@ -1,5 +1,4 @@
 import { Box, Typography } from "@mui/material";
-import theme from "../../theme";
 import serviceInfo from "../../information/about/serviceInfo.json";
 import { ServiceCard } from "./ServiceCard/ServiceCard";
 import aboutInfo from "../../information/about/aboutInfo.json";
@@ -8,9 +7,12 @@ export const About = () => {
     <Box
       sx={{
         p: 4,
-        backgroundColor: theme.palette.background.default,
+        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_6526.JPG')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        color: "white",
         overflow: "hidden",
-        height: "wrap",
+        height: "92vh",
       }}
     >
       <Box sx={{ mt: 4, maxWidth: "900px", mx: "auto", textAlign: "justify" }}>
@@ -27,7 +29,7 @@ export const About = () => {
       </Box>
 
       <Box sx={{ mt: 6 }}>
-        <Typography variant="h2" gutterBottom align="center">
+        <Typography variant="h2" gutterBottom align="center" color="white">
           השירותים שלנו
         </Typography>
         <Box
