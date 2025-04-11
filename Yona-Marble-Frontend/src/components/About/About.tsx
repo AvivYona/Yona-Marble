@@ -7,11 +7,11 @@ export const About = () => {
     <Box
       sx={{
         p: 4,
-        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_6526.JPG')",
+        backgroundImage:
+          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_6526.JPG')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         color: "white",
-        overflow: "hidden",
         height: "92vh",
       }}
     >

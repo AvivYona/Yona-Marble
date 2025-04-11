@@ -1,4 +1,6 @@
 import { Box, Typography, ImageList, ImageListItem } from "@mui/material";
+import { useState } from "react";
+import { Dialog, DialogContent, Fade } from "@mui/material";
 import marbleKitchenInfo from "../../information/marbleKitchen/marbleKitchenInfo.json";
 
 export const Catalog = () => {
@@ -10,6 +12,18 @@ export const Catalog = () => {
     { img: "/images/catalog_5.webp", title: "image" },
     { img: "/images/catalog_6.webp", title: "image" },
   ];
+
+  const [open, setOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("");
+
+  const handleClickOpen = (img: string) => {
+    setSelectedImage(img);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <>
@@ -31,6 +45,8 @@ export const Catalog = () => {
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
             <img
+              onClick={() => handleClickOpen(item.img)}
+              style={{ cursor: "pointer" }}
               srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
               src={`${item.img}?w=248&fit=crop&auto=format`}
               alt={item.title}
@@ -39,6 +55,36 @@ export const Catalog = () => {
           </ImageListItem>
         ))}
       </ImageList>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={Fade}
+        TransitionProps={{ timeout: 500 }}
+      >
+        <DialogContent sx={{ padding: 0 }}>
+          <img
+            src={selectedImage}
+            alt="Large view"
+            style={{
+              width: "100%",
+              height: "auto",
+              animation: "fadeInScale 0.3s ease-out",
+            }}
+          />
+        </DialogContent>
+      </Dialog>
+      <style>{`
+        @keyframes fadeInScale {
+          0% {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      `}</style>
     </>
   );
 };
