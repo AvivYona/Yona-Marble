@@ -1,39 +1,15 @@
-import {
-  Box,
-  Typography,
-  Card,
-  CardMedia,
-  Dialog,
-  DialogContent,
-  Fade,
-} from "@mui/material";
-import { useState } from "react";
+import { Box, Typography, ImageList, ImageListItem } from "@mui/material";
 import marbleKitchenInfo from "../../information/marbleKitchen/marbleKitchenInfo.json";
 
 export const Catalog = () => {
-  const [open, setOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<string>("");
-
   const itemData = [
-    { img: "/images/kitchen.jpg", title: "image" },
-    { img: "/images/kitchen.jpg", title: "image" },
-    { img: "/images/kitchen.jpg", title: "image" },
-    { img: "/images/kitchen.jpg", title: "image" },
-    { img: "/images/kitchen.jpg", title: "image" },
-    { img: "/images/kitchen.jpg", title: "image" },
-    { img: "/images/kitchen.jpg", title: "image" },
-    { img: "/images/kitchen.jpg", title: "image" },
-    { img: "/images/kitchen.jpg", title: "image" },
+    { img: "/images/catalog_1.webp", title: "image" },
+    { img: "/images/catalog_2.webp", title: "image" },
+    { img: "/images/catalog_3.webp", title: "image" },
+    { img: "/images/catalog_4.webp", title: "image" },
+    { img: "/images/catalog_5.webp", title: "image" },
+    { img: "/images/catalog_6.webp", title: "image" },
   ];
-
-  const handleClickOpen = (img: string) => {
-    setSelectedImage(img);
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   return (
     <>
@@ -46,83 +22,23 @@ export const Catalog = () => {
           {marbleKitchenInfo.paragraph2}
         </Typography>
       </Box>
-
-      {/* Responsive layout with Box and Flexbox */}
-      <Box
-        sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          gap: 2,
-          mt: 3,
-          width: "100%", // Ensures the Box doesn't overflow the parent container
-          maxWidth: 900, // Limits the maximum width of the container
-          mx: "auto", // Centers the container
-        }}
+      <ImageList
+        variant="masonry"
+        cols={3}
+        gap={8}
+        sx={{ maxWidth: 900, mx: "auto", my: 2 }}
       >
-        {itemData.map((item, index) => (
-          <Box
-            key={index}
-            sx={{
-              width: "30%",
-              display: "flex",
-              justifyContent: "center",
-              maxHeight: "18vh",
-            }}
-          >
-            <Card sx={{ borderRadius: 2, overflow: "hidden", width: "100%" }}>
-              <CardMedia
-                component="img"
-                image={item.img}
-                alt={item.title}
-                sx={{
-                  width: "100%",
-                  objectFit: "cover",
-                  transition: "transform 0.3s ease-in-out",
-                  "&:hover": { transform: "scale(1.05)" },
-                  cursor: "pointer", // Adds pointer cursor on hover to indicate it’s clickable
-                }}
-                onClick={() => handleClickOpen(item.img)} // Trigger modal on image click
-              />
-            </Card>
-          </Box>
+        {itemData.map((item) => (
+          <ImageListItem key={item.img}>
+            <img
+              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+              src={`${item.img}?w=248&fit=crop&auto=format`}
+              alt={item.title}
+              loading="lazy"
+            />
+          </ImageListItem>
         ))}
-      </Box>
-
-      {/* Modal for displaying the image */}
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        TransitionComponent={Fade}
-        TransitionProps={{ timeout: 500 }}
-      >
-        <DialogContent sx={{ padding: 0 }}>
-          <img
-            src={selectedImage}
-            alt="Larger view"
-            style={{
-              width: "100%",
-              height: "auto",
-              // Optional: Add slight scale animation combined with fade
-              animation: "fadeInScale 0.3s ease-out",
-            }}
-          />
-        </DialogContent>
-      </Dialog>
-
-      {/* Add global styles for animations */}
-      <style>{`
-        @keyframes fadeInScale {
-          0% {
-            opacity: 0;
-            transform: scale(0.95);
-          }
-          100% {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-      `}</style>
+      </ImageList>
     </>
   );
 };

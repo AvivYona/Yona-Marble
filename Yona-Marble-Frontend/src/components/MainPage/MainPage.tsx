@@ -3,7 +3,8 @@ import { styled } from "@mui/system";
 import aboutInfo from "../../information/about/aboutInfo.json";
 
 const HeroSection = styled(Box)(() => ({
-  backgroundImage: "url('/images/IMG_6528.JPG')",
+  backgroundImage:
+    "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_6528.JPG')",
   backgroundSize: "cover",
   backgroundPosition: "center",
   height: "92vh",
@@ -13,15 +14,6 @@ const HeroSection = styled(Box)(() => ({
   color: "white",
   textAlign: "center",
   position: "relative",
-  "&::before": {
-    content: "''",
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-  },
 }));
 
 export const MainPage = () => {
