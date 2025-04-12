@@ -12,7 +12,7 @@ export const About = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         color: "white",
-        height: "92vh",
+        minHeight: "92vh",
       }}
     >
       <Box sx={{ mt: 4, maxWidth: "900px", mx: "auto", textAlign: "justify" }}>
