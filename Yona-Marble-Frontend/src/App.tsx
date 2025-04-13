@@ -17,7 +17,15 @@ import { Bath } from "./components/Bath/Bath";
 import { HomeDecor } from "./components/HomeDecor/HomeDecor";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Accessibility } from "accessibility";
 export const App = () => {
+  window.addEventListener(
+    "load",
+    function () {
+      new Accessibility({});
+    },
+    false
+  );
   return (
     <div dir="rtl" className={style.container}>
       <ThemeProvider theme={theme}>
