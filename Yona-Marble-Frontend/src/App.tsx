@@ -15,13 +15,16 @@ import { ContactUs } from "./components/ContactUs/ContactUs";
 import { Kitchen } from "./components/Kitchen/Kitchen";
 import { Bath } from "./components/Bath/Bath";
 import { HomeDecor } from "./components/HomeDecor/HomeDecor";
-
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 export const App = () => {
   return (
     <div dir="rtl" className={style.container}>
       <ThemeProvider theme={theme}>
         <Router>
           <Navbar />
+          <Analytics />
+          <SpeedInsights />
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/about" element={<About />} />

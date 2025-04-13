@@ -9,7 +9,7 @@ export const Bath = () => {
         sx={{
           p: 4,
           backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/backgrounds/pink-blue-marble-textured-background.jpg')",
+            "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/backgrounds/pink-blue-marble-textured-background.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           color: "white",
