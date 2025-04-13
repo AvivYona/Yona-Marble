@@ -26,7 +26,9 @@ export const Navbar = () => {
   const linkMap: Map<string, string> = new Map([
     ["/", "ראשי"],
     ["/about", "אודות"],
-    ["/catalog", "קטלוג"],
+    ["/kitchen", "שיש למטבח"],
+    ["/bath", "שיש לאמבט"],
+    ["/homeDecor", "עיצוב הבית"],
     ["/contact", "צור קשר"],
   ]);
 

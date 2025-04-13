@@ -8,7 +8,7 @@ export const About = () => {
       sx={{
         p: 4,
         backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_6526.JPG')",
+          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/backgrounds/5950678.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         color: "white",

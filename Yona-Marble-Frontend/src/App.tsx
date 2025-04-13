@@ -12,7 +12,9 @@ import theme from "./theme";
 import { ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import { ContactUs } from "./components/ContactUs/ContactUs";
-import { Catalog } from "./components/Catalog/Catalog";
+import { Kitchen } from "./components/Kitchen/Kitchen";
+import { Bath } from "./components/Bath/Bath";
+import { HomeDecor } from "./components/HomeDecor/HomeDecor";
 
 export const App = () => {
   return (
@@ -24,7 +26,9 @@ export const App = () => {
             <Route path="/" element={<MainPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<ContactUs />} />
-            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/kitchen" element={<Kitchen />} />
+            <Route path="/bath" element={<Bath />} />
+            <Route path="/homeDecor" element={<HomeDecor />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Router>
