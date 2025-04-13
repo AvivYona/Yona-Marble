@@ -46,25 +46,39 @@ export const Catalog = (props: Props) => {
 
   return (
     <>
-      <ImageList
-        variant="masonry"
-        cols={3}
-        gap={8}
-        sx={{ maxWidth: 900, mx: "auto", my: 2 }}
+      <div
+        className="catalogContainer"
+        style={{
+          maxWidth: 900,
+          height: "400px",
+          overflow: "auto",
+          margin: "auto",
+          marginTop: "16px",
+          padding: "10px",
+          boxSizing: "border-box",
+          direction: "ltr",
+        }}
       >
-        {props.itemData.map((item, index) => (
-          <ImageListItem key={item.img}>
-            <img
-              onClick={() => handleClickOpen(index)}
-              style={{ cursor: "pointer" }}
-              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-              src={`${item.img}?w=248&fit=crop&auto=format`}
-              alt={item.title}
-              loading="lazy"
-            />
-          </ImageListItem>
-        ))}
-      </ImageList>
+        <ImageList
+          variant="masonry"
+          cols={3}
+          gap={8}
+          sx={{ width: "100%", my: 0 }}
+        >
+          {props.itemData.map((item, index) => (
+            <ImageListItem key={item.img}>
+              <img
+                onClick={() => handleClickOpen(index)}
+                style={{ cursor: "pointer" }}
+                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                src={`${item.img}?w=248&fit=crop&auto=format`}
+                alt={item.title}
+                loading="lazy"
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      </div>
       <Dialog
         open={open}
         onClose={handleClose}
@@ -121,6 +135,21 @@ export const Catalog = (props: Props) => {
             opacity: 1;
             transform: scale(1);
           }
+        }
+        .catalogContainer {
+          scrollbar-width: thin;
+          scrollbar-color: #888 transparent;
+        }
+        .catalogContainer::-webkit-scrollbar {
+          width: 8px;
+        }
+        .catalogContainer::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .catalogContainer::-webkit-scrollbar-thumb {
+          background-color: #888;
+          border-radius: 10px;
+          border: 2px solid transparent;
         }
       `}</style>
     </>

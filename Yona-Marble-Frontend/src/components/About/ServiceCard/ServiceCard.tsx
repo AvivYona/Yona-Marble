@@ -1,12 +1,19 @@
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
 import theme from "../../../theme";
 import serviceInfo from "../../../information/about/serviceInfo.json";
+import { useNavigate } from "react-router-dom";
+
 interface Props {
   index: number;
 }
 export const ServiceCard = (props: Props) => {
+  const navigate = useNavigate();
+
   return (
-    <Box sx={{ width: { xs: "100%", sm: "48%", md: "30%" } }}>
+    <Box
+      sx={{ width: { xs: "100%", sm: "48%", md: "30%" }, cursor: "pointer" }}
+      onClick={() => navigate(serviceInfo[props.index].href)}
+    >
       <Card
         sx={{
           backgroundColor: theme.palette.background.paper,
