@@ -4,7 +4,7 @@ import aboutInfo from "../../information/about/aboutInfo.json";
 
 const HeroSection = styled(Box)(() => ({
   backgroundImage:
-    "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_6528.JPG')",
+    "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/homeDecor/IMG_6528.JPG')",
   backgroundSize: "cover",
   backgroundPosition: "center",
   height: "92vh",
