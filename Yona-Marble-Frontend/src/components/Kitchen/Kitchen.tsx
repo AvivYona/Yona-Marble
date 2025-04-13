@@ -16,7 +16,7 @@ export const Kitchen = () => {
         color: "white",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "92vh",
+        minHeight: "92vh",
       }}
     >
       <Box sx={{ mt: 4, maxWidth: "900px", mx: "auto", textAlign: "justify" }}>

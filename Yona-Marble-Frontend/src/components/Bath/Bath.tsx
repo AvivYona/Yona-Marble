@@ -13,7 +13,7 @@ export const Bath = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           color: "white",
-          height: "92vh",
+          minHeight: "92vh",
         }}
       >
         <Box
