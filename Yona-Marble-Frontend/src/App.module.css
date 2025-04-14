@@ -10,4 +10,6 @@ body {
   --_access-icon-left: unset;
   --_access-icon-right: 20px;
   --_access-icon-bottom: 40px;
+  --_access-icon-z-index:9999;
+  --_access-icon-visible: visible;
 }
