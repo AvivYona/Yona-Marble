@@ -18,14 +18,51 @@ import { HomeDecor } from "./components/HomeDecor/HomeDecor";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Accessibility } from "accessibility";
+import { useEffect } from "react";
 export const App = () => {
-  window.addEventListener(
-    "load",
-    function () {
-      new Accessibility({});
-    },
-    false
-  );
+  useEffect(() => {
+    const accessibilityOptions ={
+      labels : {
+        resetTitle: "איפוס הגדרות",
+        closeTitle: "סגירת תפריט הנגישות",
+        menuTitle: "תפריט נגישות",
+        increaseText: "הגדלת טקסט",
+        decreaseText: "הקטנת טקסט",
+        increaseTextSpacing: "הגדלת ריווח בין אותיות",
+        decreaseTextSpacing: "הקטנת ריווח בין אותיות",
+        invertColors: "היפוך צבעים",
+        grayHues: "גווני אפור",
+        bigCursor: "סמן עכבר גדול",
+        readingGuide: "מדריך קריאה",
+        underlineLinks: "הדגשת קישורים",
+        textToSpeech: "המרת טקסט לדיבור",
+        speechToText: "המרת דיבור לטקסט",
+        disableAnimations: "ביטול אנימציות",
+        increaseLineHeight: "הגדלת ריווח בין שורות",
+        decreaseLineHeight: "הקטנת ריווח בין שורות",
+        hotkeyPrefix: "קיצור מקשים"
+      },
+      textToSpeechLang: 'he-IL',
+      speechToTextLang: 'he-IL',
+      textPixelMode: true, 
+      textSizeFactor: 4,   
+
+      
+      session: {
+        persistent: true 
+      },
+    }
+
+    const handleLoad = () => {
+      new Accessibility(accessibilityOptions);
+    };
+
+    window.addEventListener("load", handleLoad);
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
+  }, []);
   return (
     <div dir="rtl" className={style.container}>
       <ThemeProvider theme={theme}>
