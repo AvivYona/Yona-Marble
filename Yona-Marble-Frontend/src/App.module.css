@@ -5,3 +5,9 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
 }
+:root {
+  --_access-icon-top: unset;
+  --_access-icon-left: unset;
+  --_access-icon-right: 20px;
+  --_access-icon-bottom: 40px;
+}
