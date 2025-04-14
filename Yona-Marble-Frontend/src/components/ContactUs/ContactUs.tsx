@@ -7,21 +7,26 @@ export const ContactUs = () => {
   return (
     <Box
       sx={{
-        bgcolor: theme.palette.background.paper,
+        backgroundImage:
+            "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/backgrounds/contact.avif')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
         color: "text.primary",
         p: 4,
         borderRadius: 2,
-        maxWidth: { xs: "90%", sm: "80%", xl: "80%" },
-        margin: "auto",
-        mt: "10vh",
+        height:"92vh",
         boxShadow: 3,
-        display: "flex",
-        flexDirection: { xs: "column", sm: "column", md: "column", lg: "row" },
-        height: { xs: "auto", lg: "60vh" },
-        justifyContent: "space-around",
-        alignItems: "center",
+        display:"flex",
+        justifyContent:"center",
+        
       }}
     >
+      <Box sx={{
+        width:"70%",
+        display: "flex",
+        flexDirection: { xs: "column", sm: "column", md: "column", lg: "row" },
+        justifyContent: "space-around",
+        alignItems: "center",}}>
       <Box
         sx={{
           width: { xs: "100%", lg: "25vw" },
@@ -52,6 +57,7 @@ export const ContactUs = () => {
           פנו אלינו ליעוץ מקצועי
         </Typography>
         <ContactForm />
+      </Box>
       </Box>
     </Box>
   );
