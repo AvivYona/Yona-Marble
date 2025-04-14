@@ -22,10 +22,7 @@ export const About = () => {
         <Typography variant="h6" gutterBottom>
           {aboutInfo.description}
         </Typography>
-        <Typography variant="h5">
-          <br />
-          {aboutInfo.title2}
-        </Typography>
+        
       </Box>
 
       <Box sx={{ mt: 6 }}>
