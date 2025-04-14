@@ -21,10 +21,7 @@ export const MainPage = () => {
   return (
     <Box>
       <HeroSection>
-        <Box sx={{ position: "relative", zIndex: 1 }}>
-          <Typography variant="h1" gutterBottom>
-            שיש יונה
-          </Typography>
+        <Box sx={{ position: "relative", zIndex: 1 }}>  
           <Typography
             variant="h5"
             sx={{ width: isSmallScreen ? "70vw" : "30vw" }}

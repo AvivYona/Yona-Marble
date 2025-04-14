@@ -14,7 +14,7 @@ export const ContactUs = () => {
         color: "text.primary",
         p: 4,
         borderRadius: 2,
-        height:"92vh",
+        minHeight:"92vh",
         boxShadow: 3,
         display:"flex",
         justifyContent:"center",
