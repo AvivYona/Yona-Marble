@@ -17,7 +17,6 @@ import { NavBarButton } from "./NavBarButton/NavBarButton";
 import MenuIcon from "@mui/icons-material/Menu"; // Import the menu icon
 import CloseIcon from "@mui/icons-material/Close"; // Import the close icon
 import { useState } from "react";
-
 export const Navbar = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery("(max-width:720px)"); // Custom breakpoint
