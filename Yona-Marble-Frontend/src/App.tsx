@@ -53,15 +53,8 @@ export const App = () => {
       },
     }
 
-    const handleLoad = () => {
-      new Accessibility(accessibilityOptions);
-    };
-
-    window.addEventListener("load", handleLoad);
-
-    return () => {
-      window.removeEventListener("load", handleLoad);
-    };
+    
+    new Accessibility(accessibilityOptions);
   }, []);
   return (
     <div dir="rtl" className={style.container}>
