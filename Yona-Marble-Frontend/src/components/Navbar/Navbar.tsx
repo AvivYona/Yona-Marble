@@ -11,7 +11,7 @@ import {
   ListItemText,
   Fade,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import style from "./Navbar.module.css";
 import { NavBarButton } from "./NavBarButton/NavBarButton";
 import MenuIcon from "@mui/icons-material/Menu"; // Import the menu icon
@@ -43,35 +43,61 @@ export const Navbar = () => {
       setDrawerOpen(open);
     };
 
-  const list = () => (
-    <Box
-      sx={{ width: "100%" }} // Updated marginTop
-      role="presentation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
-    >
-      <List>
-        {[...linkMap.keys()].map((key) => (
-          <ListItem
-            key={linkMap.get(key)}
-            component={Link}
-            to={key}
-            sx={{
-              textAlign: "right",
-              "&:hover": {
-                backgroundColor: theme.palette.action.hover, // Use theme's hover color
-                cursor: "pointer", // Change cursor to pointer on hover
-                transform: "translateX(-5px)", // Optional: Add a slight movement on hover
-                transition: "transform 0.2s ease, background-color 0.2s ease", // Smooth transition
-              },
-            }}
-          >
-            <ListItemText primary={linkMap.get(key)} />
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
+    const location = useLocation();
+
+    const list = () => (
+      <Box
+        sx={{ width: "100%" }}
+        role="presentation"
+        onClick={toggleDrawer(false)}
+        onKeyDown={toggleDrawer(false)}
+      >
+        <List>
+          {[...linkMap.keys()].map((key) => (
+            <ListItem
+              key={linkMap.get(key)}
+              component={Link}
+              to={key}
+              sx={{
+                textAlign: "right",
+                "&:hover": {
+                  backgroundColor: theme.palette.action.hover,
+                  cursor: "pointer",
+                  transform: "translateX(-5px)",
+                  transition: "transform 0.2s ease, background-color 0.2s ease",
+                },
+              }}
+            >
+              <ListItemText
+                primary={linkMap.get(key)}
+                sx={{
+                  textAlign: "right",
+                  position: "relative",
+                  width: "fit-content",
+                  ml: "auto",
+                  "&:after": {
+                    content: '""',
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0,
+                    width: "100%",
+                    height: "3px",
+                    backgroundColor: "#fff",
+                    transform:
+                      location.pathname === key ? "scaleX(1)" : "scaleX(0)",
+                    transformOrigin:
+                      location.pathname === key
+                        ? "bottom left"
+                        : "bottom right",
+                    transition: "transform 0.3s ease, transform-origin 0.3s ease",
+                  },
+                }}
+              />
+            </ListItem>
+          ))}
+        </List>
+      </Box>
+    );
 
   return (
     <AppBar
@@ -84,6 +110,8 @@ export const Navbar = () => {
           display: "flex",
           justifyContent: "space-between",
           height: navBarHeight, // Apply dynamic height to the navbar
+          maxHeight:navBarHeight,
+          minHeight:navBarHeight,
         }}
       >
         {isSmallScreen ? (
