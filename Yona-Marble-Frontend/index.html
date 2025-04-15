@@ -2,11 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="/images/favicon-without-background.png"
-    />
+    <!-- Default favicon for browsers that don't support media queries -->
+    <link rel="icon" href="/images/favicon-light.ico" type="image/png">
+
+    <!-- Favicon for light mode -->
+    <link rel="icon" href="/images/favicon-light.ico" type="image/png" media="(prefers-color-scheme: light)">
+
+    <!-- Favicon for dark mode -->
+    <link rel="icon" href="/images/favicon-dark.ico" type="image/png" media="(prefers-color-scheme: dark)">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>שיש יונה</title>
   </head>
