@@ -1,15 +1,20 @@
 import {
-  ImageList,
-  ImageListItem,
-  IconButton,
   Dialog,
   DialogContent,
+  IconButton,
   Fade,
+  useMediaQuery,
 } from "@mui/material";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperType } from "swiper/types";
+import { Navigation } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
 
 interface ItemData {
   img: string;
@@ -18,10 +23,12 @@ interface ItemData {
 interface Props {
   itemData: ItemData[];
 }
-const MotionImageListItem = motion(ImageListItem);
-export const Catalog = (props: Props) => {
+
+export const Catalog = ({ itemData }: Props) => {
   const [open, setOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const swiperRef = useRef<SwiperType>();
+  const isSmall = useMediaQuery("(max-width:600px)");
 
   const handleClickOpen = (index: number) => {
     setSelectedIndex(index);
@@ -34,75 +41,109 @@ export const Catalog = (props: Props) => {
 
   const handleNext = () => {
     if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex + 1) % props.itemData.length);
+      setSelectedIndex((selectedIndex + 1) % itemData.length);
     }
   };
 
   const handlePrev = () => {
     if (selectedIndex !== null) {
-      setSelectedIndex(
-        (selectedIndex - 1 + props.itemData.length) % props.itemData.length
-      );
+      setSelectedIndex((selectedIndex - 1 + itemData.length) % itemData.length);
     }
   };
 
   return (
     <>
       <div
-        className="catalogContainer"
         style={{
           maxWidth: 900,
-          height: "400px",
-          overflow: "auto",
           margin: "auto",
-          marginTop: "16px",
           padding: "10px",
           boxSizing: "border-box",
-          direction: "ltr",
         }}
       >
-        <ImageList
-          variant="masonry"
-          cols={3}
-          gap={8}
-          sx={{ width: "100%", my: 0 }}
+        <Swiper
+          modules={[Navigation]}
+          slidesPerView={isSmall ? 1 : 3}
+          spaceBetween={12}
+          grabCursor
+          onSwiper={(swiper: SwiperType) => {
+            swiperRef.current = swiper;
+          }}
         >
-          {props.itemData.map((item, index) => (
-            <MotionImageListItem
-              key={item.img}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.8,
-                ease: "easeInOut",
-                delay: index * 0.2,
-              }}
-              whileHover={{ scale: 1.05 }}
-              sx={{ cursor: "pointer" }}
-              viewport={{ once: true, amount: 0.4 }}
-            >
-              <img
+          {itemData.map((item, index) => (
+            <SwiperSlide key={item.img}>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.85 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.6,
+                  ease: "easeInOut",
+                  delay: index * 0.15,
+                }}
+                viewport={{ once: true, amount: 0.5 }}
+                whileHover={{ scale: 1.05 }}
+                style={{ cursor: "pointer" }}
                 onClick={() => handleClickOpen(index)}
-                style={{ width: "100%", height: "auto" }}
-                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                src={`${item.img}?w=248&fit=crop&auto=format`}
-                alt={item.title}
-                loading="lazy"
-              />
-            </MotionImageListItem>
+              >
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  style={{ width: "100%", borderRadius: 8 }}
+                />
+              </motion.div>
+            </SwiperSlide>
           ))}
-        </ImageList>
+        </Swiper>
+
+        {/* Navigation Arrows Below */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            gap: 8,
+            marginTop: "12px",
+            marginRight: "10px",
+          }}
+        >
+          <IconButton
+            onClick={() => swiperRef.current?.slidePrev()}
+            size="small"
+            sx={{
+              border: "1px solid #ccc",
+              borderRadius: "50%",
+              padding: "4px",
+            }}
+          >
+            <ArrowBackIosIcon fontSize="small" />
+          </IconButton>
+          <IconButton
+            onClick={() => swiperRef.current?.slideNext()}
+            size="small"
+            sx={{
+              border: "1px solid #ccc",
+              borderRadius: "50%",
+              padding: "4px",
+            }}
+          >
+            <ArrowForwardIosIcon fontSize="small" />
+          </IconButton>
+        </div>
       </div>
+
+      {/* Dialog Viewer */}
       <Dialog
         open={open}
         onClose={handleClose}
         TransitionComponent={Fade}
         TransitionProps={{ timeout: 500 }}
+        fullWidth
+        maxWidth="md"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.3 }}
         >
           <DialogContent sx={{ padding: 0, position: "relative" }}>
             <IconButton
@@ -112,20 +153,19 @@ export const Catalog = (props: Props) => {
                 top: "50%",
                 left: "10px",
                 transform: "translateY(-50%)",
-                zIndex: 1,
+                zIndex: 2,
               }}
             >
               <ArrowBackIosIcon />
             </IconButton>
 
             <img
-              src={
-                selectedIndex !== null ? props.itemData[selectedIndex].img : ""
-              }
-              alt="Large view"
+              src={selectedIndex !== null ? itemData[selectedIndex].img : ""}
+              alt="Zoom"
               style={{
                 width: "100%",
                 height: "auto",
+                borderRadius: 6,
                 animation: "fadeInScale 0.3s ease-out",
               }}
             />
@@ -137,7 +177,7 @@ export const Catalog = (props: Props) => {
                 top: "50%",
                 right: "10px",
                 transform: "translateY(-50%)",
-                zIndex: 1,
+                zIndex: 2,
               }}
             >
               <ArrowForwardIosIcon />
@@ -145,6 +185,8 @@ export const Catalog = (props: Props) => {
           </DialogContent>
         </motion.div>
       </Dialog>
+
+      {/* Animations */}
       <style>{`
         @keyframes fadeInScale {
           0% {
@@ -155,21 +197,6 @@ export const Catalog = (props: Props) => {
             opacity: 1;
             transform: scale(1);
           }
-        }
-        .catalogContainer {
-          scrollbar-width: thin;
-          scrollbar-color: #888 transparent;
-        }
-        .catalogContainer::-webkit-scrollbar {
-          width: 8px;
-        }
-        .catalogContainer::-webkit-scrollbar-track {
-          background: transparent;
-        }
-        .catalogContainer::-webkit-scrollbar-thumb {
-          background-color: #888;
-          border-radius: 10px;
-          border: 2px solid transparent;
         }
       `}</style>
     </>
