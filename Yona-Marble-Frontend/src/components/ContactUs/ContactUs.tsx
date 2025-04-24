@@ -10,14 +10,14 @@ export const ContactUs = () => {
       sx={{
         color: "text.primary",
         p: 4,
-        minHeight: "92vh",
+        minHeight: "60vh",
         display: "flex",
         justifyContent: "center",
       }}
     >
       <Box
         sx={{
-          width: "100vw",
+          width: "80vw",
           display: "flex",
           flexDirection: {
             xs: "column",
@@ -37,7 +37,6 @@ export const ContactUs = () => {
         >
           <Box
             sx={{
-              width: { xs: "100%", lg: "25vw" },
               bgcolor: theme.palette.primary.light,
               borderRadius: "calc(1vh + 1vw)",
               display: "flex",
@@ -64,7 +63,7 @@ export const ContactUs = () => {
         >
           <Box
             sx={{
-              width: { xs: "100%", lg: "25vw" },
+              width: "60vw",
               bgcolor: theme.palette.primary.light,
               borderRadius: "calc(1vh + 1vw)",
               display: "flex",

@@ -8,7 +8,7 @@ import logo from "/images/yona-marble-logo-black.jpeg";
 const HeroSection = styled(Box)(() => ({
   backgroundSize: "cover",
   backgroundPosition: "center",
-  height: "92vh",
+  height: "60vh",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
