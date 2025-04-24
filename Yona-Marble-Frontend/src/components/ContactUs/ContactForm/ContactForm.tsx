@@ -1,6 +1,7 @@
 import React, { SyntheticEvent, useState } from "react";
 import { Box, TextField, Button } from "@mui/material";
 import { sendEmail } from "../../../utils/mail";
+import theme from "../../../theme";
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -89,7 +90,7 @@ export const ContactForm = () => {
       sx={{
         mx: "auto",
         height: "auto",
-        width: { xs: "90%", sm: "70%", md: "50%", lg: "40%" },
+        width: "100%",
         padding: 2,
         display: "flex",
         flexDirection: "column",
@@ -103,7 +104,7 @@ export const ContactForm = () => {
         <TextField
           fullWidth
           label="שם"
-          sx={{ textAlign: "right" }}
+          sx={{ textAlign: "right", color: theme.palette.primary.contrastText }}
           name="fullName"
           value={formData.fullName}
           onChange={handleChange}
@@ -118,6 +119,7 @@ export const ContactForm = () => {
               sx: {
                 right: 0, // Position the label on the right
                 transformOrigin: "top right", // Align label origin for RTL
+                color: theme.palette.primary.contrastText,
               },
             },
             formHelperText: {
@@ -150,7 +152,11 @@ export const ContactForm = () => {
               maxLength: 10, // Limit input to 10 characters
             },
             input: {
-              sx: { borderRadius: "8px", textAlign: "right" },
+              sx: {
+                borderRadius: "8px",
+                textAlign: "right",
+                color: theme.palette.primary.contrastText,
+              },
             },
             inputLabel: {
               sx: {
@@ -158,6 +164,7 @@ export const ContactForm = () => {
                 transformOrigin: "top right", // Align label origin for RTL
                 inputMode: "numeric", // Ensures numeric keypad on mobile devices
                 maxLength: 10,
+                color: theme.palette.primary.contrastText,
               },
             },
             formHelperText: {

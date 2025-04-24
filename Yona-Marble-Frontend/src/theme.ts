@@ -5,8 +5,8 @@ const theme = createTheme({
     mode: "dark", // Dark theme to align with a black navbar
     primary: {
       main: "#3f51b5", // A rich blue tone for primary actions
-      contrastText: "#ffffff", // White text for contrast
-      light: "#2a2a2a", //
+      contrastText: "#000000", // White text for contrast
+      light: "#f7f7f7", //
     },
     secondary: {
       main: "#d4af37", // A gold accent to reflect premium quality

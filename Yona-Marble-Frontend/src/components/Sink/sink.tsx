@@ -1,6 +1,8 @@
 import { Box, Typography } from "@mui/material";
+import { motion } from "framer-motion";
 import { Catalog } from "../Catalog/Catalog";
 import sinkInfo from "../../information/sink/sinkInfo.json";
+import theme from "../../theme";
 export const Sink = () => {
   const itemData = [
     { img: "/images/sinks/סבליין-350-לבן.png", title: "סבליין-350-לבן" },
@@ -11,21 +13,33 @@ export const Sink = () => {
     <Box
       sx={{
         p: 4,
-        backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/backgrounds/elegant_hand_painted_alcohol_ink_background_with_gold_glitter_0609-min.jpg')",
-        color: "white",
+        color: theme.palette.primary.contrastText,
         backgroundSize: "cover",
         backgroundPosition: "center",
         minHeight: "92vh",
       }}
     >
       <Box sx={{ mt: 4, maxWidth: "900px", mx: "auto", textAlign: "justify" }}>
-        <Typography variant="h5" gutterBottom sx={{ display: "inline" }}>
-          {sinkInfo.paragraph1}
-        </Typography>
-        <Typography variant="h6" gutterBottom sx={{ display: "inline" }}>
-          {sinkInfo.paragraph2}
-        </Typography>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.8 }}
+        >
+          <Typography variant="h5" gutterBottom sx={{ display: "inline" }}>
+            {sinkInfo.paragraph1}
+          </Typography>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true, amount: 0.8 }}
+        >
+          <Typography variant="h6" gutterBottom sx={{ display: "inline" }}>
+            {sinkInfo.paragraph2}
+          </Typography>
+        </motion.div>
       </Box>
       <Catalog itemData={itemData}></Catalog>
     </Box>
