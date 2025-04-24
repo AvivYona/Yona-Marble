@@ -11,7 +11,7 @@ export const Bath = () => {
         sx={{
           p: 4,
           color: theme.palette.primary.contrastText,
-          minHeight: "92vh",
+          height: "60vh",
         }}
       >
         <Box
