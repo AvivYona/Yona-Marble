@@ -19,10 +19,11 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Accessibility } from "accessibility";
 import { useEffect } from "react";
+import { Sink } from "./components/Sink/sink";
 export const App = () => {
   useEffect(() => {
-    const accessibilityOptions ={
-      labels : {
+    const accessibilityOptions = {
+      labels: {
         resetTitle: "איפוס הגדרות",
         closeTitle: "סגירת תפריט הנגישות",
         menuTitle: "תפריט נגישות",
@@ -40,20 +41,18 @@ export const App = () => {
         disableAnimations: "ביטול אנימציות",
         increaseLineHeight: "הגדלת ריווח בין שורות",
         decreaseLineHeight: "הקטנת ריווח בין שורות",
-        hotkeyPrefix: "קיצור מקשים"
+        hotkeyPrefix: "קיצור מקשים",
       },
-      textToSpeechLang: 'he-IL',
-      speechToTextLang: 'he-IL',
-      textPixelMode: true, 
-      textSizeFactor: 4,   
+      textToSpeechLang: "he-IL",
+      speechToTextLang: "he-IL",
+      textPixelMode: true,
+      textSizeFactor: 4,
 
-      
       session: {
-        persistent: true 
+        persistent: true,
       },
-    }
+    };
 
-    
     new Accessibility(accessibilityOptions);
   }, []);
   return (
@@ -70,6 +69,8 @@ export const App = () => {
             <Route path="/kitchen" element={<Kitchen />} />
             <Route path="/bath" element={<Bath />} />
             <Route path="/homeDecor" element={<HomeDecor />} />
+            <Route path="/sink" element={<Sink />} />
+
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Router>

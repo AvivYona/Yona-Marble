@@ -1,11 +1,11 @@
 import { Box, Typography } from "@mui/material";
 import { Catalog } from "../Catalog/Catalog";
-import kitchenInfo from "../../information/marbleKitchen/marbleKitchenInfo.json";
-export const Kitchen = () => {
+import sinkInfo from "../../information/sink/sinkInfo.json";
+export const Sink = () => {
   const itemData = [
-    { img: "/images/kitchen/catalog_3.webp", title: "מטבח" },
-    { img: "/images/kitchen/catalog_5.webp", title: "מטבח" },
-    { img: "/images/kitchen/catalog_6.webp", title: "מטבח" },
+    { img: "/images/sinks/סבליין-350-לבן.png", title: "סבליין-350-לבן" },
+    { img: "/images/sinks/רונדו-לבן.jpeg", title: "רונדו-לבן" },
+    { img: "/images/sinks/פלאון-5.jpeg", title: "פלאון-5" },
   ];
   return (
     <Box
@@ -20,11 +20,11 @@ export const Kitchen = () => {
       }}
     >
       <Box sx={{ mt: 4, maxWidth: "900px", mx: "auto", textAlign: "justify" }}>
-        <Typography variant="h5" gutterBottom>
-          {kitchenInfo.paragraph1}
+        <Typography variant="h5" gutterBottom sx={{ display: "inline" }}>
+          {sinkInfo.paragraph1}
         </Typography>
-        <Typography variant="h6" gutterBottom>
-          {kitchenInfo.paragraph2}
+        <Typography variant="h6" gutterBottom sx={{ display: "inline" }}>
+          {sinkInfo.paragraph2}
         </Typography>
       </Box>
       <Catalog itemData={itemData}></Catalog>
