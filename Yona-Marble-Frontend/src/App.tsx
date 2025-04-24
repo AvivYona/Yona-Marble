@@ -4,7 +4,7 @@ import { MainPage } from "./components/MainPage/MainPage";
 import { About } from "./components/About/About";
 import theme from "./theme";
 import { ThemeProvider } from "@mui/material/styles";
-import { CssBaseline } from "@mui/material";
+import { CssBaseline, Box } from "@mui/material";
 import { ContactUs } from "./components/ContactUs/ContactUs";
 import { Kitchen } from "./components/Kitchen/Kitchen";
 import { Bath } from "./components/Bath/Bath";
@@ -66,15 +66,30 @@ export const App = () => {
               scrollSnapType: "y mandatory",
               overflowY: "scroll",
               height: "100vh",
+              backgroundColor: "#fff",
             }}
           >
-            <MainPage />
-            <About />
-            <ContactUs />
-            <Kitchen />
-            <Bath />
-            <HomeDecor />
-            <Sink />
+            <Box sx={{ bgcolor: "#ffffff" }}>
+              <MainPage />
+            </Box>
+            <Box sx={{ bgcolor: "#f7f7f7" }}>
+              <About />
+            </Box>
+            <Box sx={{ bgcolor: "#ffffff" }}>
+              <ContactUs />
+            </Box>
+            <Box sx={{ bgcolor: "#f7f7f7" }}>
+              <Kitchen />
+            </Box>
+            <Box sx={{ bgcolor: "#ffffff" }}>
+              <Bath />
+            </Box>
+            <Box sx={{ bgcolor: "#f7f7f7" }}>
+              <HomeDecor />
+            </Box>
+            <Box sx={{ bgcolor: "#ffffff" }}>
+              <Sink />
+            </Box>
           </motion.div>
         </Router>
         <CssBaseline />

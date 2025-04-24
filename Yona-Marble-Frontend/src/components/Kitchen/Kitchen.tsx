@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { Catalog } from "../Catalog/Catalog";
 import kitchenInfo from "../../information/marbleKitchen/marbleKitchenInfo.json";
 import { motion } from "framer-motion";
+import theme from "../../theme";
 export const Kitchen = () => {
   const itemData = [
     { img: "/images/kitchen/catalog_3.webp", title: "מטבח" },
@@ -14,8 +15,8 @@ export const Kitchen = () => {
         p: 4,
         backgroundImage:
           "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/backgrounds/elegant_hand_painted_alcohol_ink_background_with_gold_glitter_0609-min.jpg')",
-        color: "white",
-        backgroundSize: "cover",
+          color: theme.palette.primary.contrastText,
+          backgroundSize: "cover",
         backgroundPosition: "center",
         minHeight: "92vh",
       }}

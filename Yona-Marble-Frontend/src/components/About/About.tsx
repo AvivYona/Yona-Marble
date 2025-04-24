@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import serviceInfo from "../../information/about/serviceInfo.json";
 import { ServiceCard } from "./ServiceCard/ServiceCard";
 import aboutInfo from "../../information/about/aboutInfo.json";
+import theme from "../../theme";
 export const About = () => {
   return (
     <Box
@@ -12,7 +13,7 @@ export const About = () => {
           "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/backgrounds/5950678.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        color: "white",
+        color: theme.palette.primary.contrastText,
         minHeight: "92vh",
       }}
     >
@@ -40,7 +41,12 @@ export const About = () => {
       </Box>
 
       <Box sx={{ mt: 6 }}>
-        <Typography variant="h2" gutterBottom align="center" color="white">
+        <Typography
+          variant="h2"
+          gutterBottom
+          align="center"
+          color={theme.palette.primary.contrastText}
+        >
           השירותים שלנו
         </Typography>
         <Box
@@ -59,9 +65,9 @@ export const About = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{
-                duration: 0.6,
-                ease: "easeOut",
-                delay: index * 0.15,
+                duration: 0.9,
+                ease: "easeInOut",
+                delay: index * 0.2,
               }}
               style={{ width: "25%" }}
               viewport={{ once: true, amount: 0.4 }}

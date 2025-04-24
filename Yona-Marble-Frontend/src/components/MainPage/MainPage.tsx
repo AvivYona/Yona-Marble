@@ -2,6 +2,7 @@ import { Typography, Box, useMediaQuery } from "@mui/material";
 import { styled } from "@mui/system";
 import aboutInfo from "../../information/about/aboutInfo.json";
 import { motion } from "framer-motion";
+import theme from "../../theme";
 
 const HeroSection = styled(Box)(() => ({
   backgroundImage:
@@ -12,7 +13,7 @@ const HeroSection = styled(Box)(() => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  color: "white",
+  color: theme.palette.primary.contrastText,
   textAlign: "center",
   position: "relative",
 }));
