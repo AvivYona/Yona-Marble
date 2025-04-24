@@ -9,6 +9,7 @@ import {
 import { useState } from "react";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { motion } from "framer-motion";
 
 interface ItemData {
   img: string;
@@ -17,6 +18,7 @@ interface ItemData {
 interface Props {
   itemData: ItemData[];
 }
+const MotionImageListItem = motion(ImageListItem);
 export const Catalog = (props: Props) => {
   const [open, setOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -66,16 +68,27 @@ export const Catalog = (props: Props) => {
           sx={{ width: "100%", my: 0 }}
         >
           {props.itemData.map((item, index) => (
-            <ImageListItem key={item.img}>
+            <MotionImageListItem
+              key={item.img}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                ease: "easeOut",
+                delay: index * 0.1,
+              }}
+              whileHover={{ scale: 1.05 }}
+              sx={{ cursor: "pointer" }}
+            >
               <img
                 onClick={() => handleClickOpen(index)}
-                style={{ cursor: "pointer" }}
+                style={{ width: "100%", height: "auto" }}
                 srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                 src={`${item.img}?w=248&fit=crop&auto=format`}
                 alt={item.title}
                 loading="lazy"
               />
-            </ImageListItem>
+            </MotionImageListItem>
           ))}
         </ImageList>
       </div>
@@ -85,45 +98,51 @@ export const Catalog = (props: Props) => {
         TransitionComponent={Fade}
         TransitionProps={{ timeout: 500 }}
       >
-        <DialogContent sx={{ padding: 0, position: "relative" }}>
-          <IconButton
-            onClick={handlePrev}
-            sx={{
-              position: "absolute",
-              top: "50%",
-              left: "10px",
-              transform: "translateY(-50%)",
-              zIndex: 1,
-            }}
-          >
-            <ArrowBackIosIcon />
-          </IconButton>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        >
+          <DialogContent sx={{ padding: 0, position: "relative" }}>
+            <IconButton
+              onClick={handlePrev}
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "10px",
+                transform: "translateY(-50%)",
+                zIndex: 1,
+              }}
+            >
+              <ArrowBackIosIcon />
+            </IconButton>
 
-          <img
-            src={
-              selectedIndex !== null ? props.itemData[selectedIndex].img : ""
-            }
-            alt="Large view"
-            style={{
-              width: "100%",
-              height: "auto",
-              animation: "fadeInScale 0.3s ease-out",
-            }}
-          />
+            <img
+              src={
+                selectedIndex !== null ? props.itemData[selectedIndex].img : ""
+              }
+              alt="Large view"
+              style={{
+                width: "100%",
+                height: "auto",
+                animation: "fadeInScale 0.3s ease-out",
+              }}
+            />
 
-          <IconButton
-            onClick={handleNext}
-            sx={{
-              position: "absolute",
-              top: "50%",
-              right: "10px",
-              transform: "translateY(-50%)",
-              zIndex: 1,
-            }}
-          >
-            <ArrowForwardIosIcon />
-          </IconButton>
-        </DialogContent>
+            <IconButton
+              onClick={handleNext}
+              sx={{
+                position: "absolute",
+                top: "50%",
+                right: "10px",
+                transform: "translateY(-50%)",
+                zIndex: 1,
+              }}
+            >
+              <ArrowForwardIosIcon />
+            </IconButton>
+          </DialogContent>
+        </motion.div>
       </Dialog>
       <style>{`
         @keyframes fadeInScale {

@@ -10,10 +10,6 @@ export const Bath = () => {
       <Box
         sx={{
           p: 4,
-          backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/backgrounds/pink-blue-marble-textured-background-min.webp')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
           color: theme.palette.primary.contrastText,
           minHeight: "92vh",
         }}

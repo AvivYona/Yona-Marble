@@ -1,5 +1,5 @@
 import style from "./App.module.css";
-import { BrowserRouter as Router, Navigate } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { MainPage } from "./components/MainPage/MainPage";
 import { About } from "./components/About/About";
 import theme from "./theme";
@@ -72,19 +72,19 @@ export const App = () => {
             <Box sx={{ bgcolor: "#ffffff" }}>
               <MainPage />
             </Box>
-            <Box sx={{ bgcolor: "#f7f7f7" }}>
+            <Box sx={{ bgcolor: "#ffffff" }}>
               <About />
             </Box>
             <Box sx={{ bgcolor: "#ffffff" }}>
               <ContactUs />
             </Box>
-            <Box sx={{ bgcolor: "#f7f7f7" }}>
+            <Box sx={{ bgcolor: "#ffffff" }}>
               <Kitchen />
             </Box>
             <Box sx={{ bgcolor: "#ffffff" }}>
               <Bath />
             </Box>
-            <Box sx={{ bgcolor: "#f7f7f7" }}>
+            <Box sx={{ bgcolor: "#ffffff" }}>
               <HomeDecor />
             </Box>
             <Box sx={{ bgcolor: "#ffffff" }}>

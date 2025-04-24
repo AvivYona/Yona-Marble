@@ -40,7 +40,7 @@ export const IconBox = (props: Props) => {
         target="_blank"
         rel="noopener"
         sx={{
-          color: theme.palette.text.primary,
+          color: theme.palette.primary.contrastText,
         }}
       >
         <props.Icon sx={{ fontSize: "calc(1.5vh + 1.5vw)" }} />
@@ -61,7 +61,12 @@ export const IconBox = (props: Props) => {
           }}
           onClick={() => handleCopyToClipboard(`${props.additionalInfo}`)}
         >
-          <Typography variant="subtitle2">{props.additionalInfo}</Typography>
+          <Typography
+            variant="subtitle2"
+            color={theme.palette.primary.contrastText}
+          >
+            {props.additionalInfo}
+          </Typography>
         </Box>
       </Tooltip>
     </Box>

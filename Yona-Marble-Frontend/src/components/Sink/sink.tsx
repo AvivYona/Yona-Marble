@@ -13,8 +13,6 @@ export const Sink = () => {
     <Box
       sx={{
         p: 4,
-        backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/backgrounds/elegant_hand_painted_alcohol_ink_background_with_gold_glitter_0609-min.jpg')",
         color: theme.palette.primary.contrastText,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -26,7 +24,7 @@ export const Sink = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.8 }}
         >
           <Typography variant="h5" gutterBottom sx={{ display: "inline" }}>
             {sinkInfo.paragraph1}
@@ -36,7 +34,7 @@ export const Sink = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.8 }}
         >
           <Typography variant="h6" gutterBottom sx={{ display: "inline" }}>
             {sinkInfo.paragraph2}

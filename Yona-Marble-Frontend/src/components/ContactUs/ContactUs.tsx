@@ -8,22 +8,16 @@ export const ContactUs = () => {
   return (
     <Box
       sx={{
-        backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/backgrounds/contact.avif')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
         color: "text.primary",
         p: 4,
-        borderRadius: 2,
         minHeight: "92vh",
-        boxShadow: 3,
         display: "flex",
         justifyContent: "center",
       }}
     >
       <Box
         sx={{
-          width: "70%",
+          width: "100vw",
           display: "flex",
           flexDirection: {
             xs: "column",

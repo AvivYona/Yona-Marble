@@ -38,10 +38,11 @@ export const ServiceCard = (props: Props) => {
             sx={{ cursor: "pointer" }}
           />
         </Box>
-        <CardContent sx={{ height: "12vh" }}>
+        <CardContent sx={{ height: "12vh", backgroundColor: "#f7f7f7" }}>
           <Typography variant="h5" color={theme.palette.primary.contrastText}>
             {serviceInfo[props.index].title}
           </Typography>
+          {}
           <Typography
             variant="body2"
             color={theme.palette.primary.contrastText}

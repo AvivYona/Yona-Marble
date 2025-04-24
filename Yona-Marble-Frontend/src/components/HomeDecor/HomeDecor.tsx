@@ -15,8 +15,6 @@ export const HomeDecor = () => {
       <Box
         sx={{
           p: 4,
-          backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/backgrounds/5723006.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           color: theme.palette.primary.contrastText,

@@ -1,18 +1,16 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
 import serviceInfo from "../../information/about/serviceInfo.json";
 import { ServiceCard } from "./ServiceCard/ServiceCard";
 import aboutInfo from "../../information/about/aboutInfo.json";
 import theme from "../../theme";
 export const About = () => {
+  const isSmallScreen = useMediaQuery("(max-width:720px)");
+
   return (
     <Box
       sx={{
         p: 4,
-        backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/backgrounds/5950678.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
         color: theme.palette.primary.contrastText,
         minHeight: "92vh",
       }}
@@ -52,10 +50,10 @@ export const About = () => {
         <Box
           sx={{
             display: "flex",
+            flexDirection: isSmallScreen ? "column" : "row",
             flexWrap: "nowrap",
             justifyContent: "center",
             gap: 4,
-            overflowX: "auto",
             paddingBottom: 2,
           }}
         >
@@ -69,7 +67,7 @@ export const About = () => {
                 ease: "easeInOut",
                 delay: index * 0.2,
               }}
-              style={{ width: "25%" }}
+              style={{ width: isSmallScreen ? "100%" : "25%" }}
               viewport={{ once: true, amount: 0.4 }}
             >
               <ServiceCard index={index} />
