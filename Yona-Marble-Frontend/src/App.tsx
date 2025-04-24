@@ -1,11 +1,5 @@
-import { Navbar } from "./components/Navbar/Navbar";
 import style from "./App.module.css";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Navigate } from "react-router-dom";
 import { MainPage } from "./components/MainPage/MainPage";
 import { About } from "./components/About/About";
 import theme from "./theme";
@@ -20,6 +14,8 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Accessibility } from "accessibility";
 import { useEffect } from "react";
 import { Sink } from "./components/Sink/sink";
+import { motion } from "framer-motion";
+
 export const App = () => {
   useEffect(() => {
     const accessibilityOptions = {
@@ -59,20 +55,27 @@ export const App = () => {
     <div dir="rtl" className={style.container}>
       <ThemeProvider theme={theme}>
         <Router>
-          <Navbar />
           <Analytics />
           <SpeedInsights />
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<ContactUs />} />
-            <Route path="/kitchen" element={<Kitchen />} />
-            <Route path="/bath" element={<Bath />} />
-            <Route path="/homeDecor" element={<HomeDecor />} />
-            <Route path="/sink" element={<Sink />} />
-
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            style={{
+              scrollSnapType: "y mandatory",
+              overflowY: "scroll",
+              height: "100vh",
+            }}
+          >
+            <MainPage />
+            <About />
+            <ContactUs />
+            <Kitchen />
+            <Bath />
+            <HomeDecor />
+            <Sink />
+          </motion.div>
         </Router>
         <CssBaseline />
       </ThemeProvider>

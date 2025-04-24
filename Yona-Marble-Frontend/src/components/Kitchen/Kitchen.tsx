@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { Catalog } from "../Catalog/Catalog";
 import kitchenInfo from "../../information/marbleKitchen/marbleKitchenInfo.json";
+import { motion } from "framer-motion";
 export const Kitchen = () => {
   const itemData = [
     { img: "/images/kitchen/catalog_3.webp", title: "מטבח" },
@@ -20,12 +21,26 @@ export const Kitchen = () => {
       }}
     >
       <Box sx={{ mt: 4, maxWidth: "900px", mx: "auto", textAlign: "justify" }}>
-        <Typography variant="h5" gutterBottom>
-          {kitchenInfo.paragraph1}
-        </Typography>
-        <Typography variant="h6" gutterBottom>
-          {kitchenInfo.paragraph2}
-        </Typography>
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.6 }}
+        >
+          <Typography variant="h5" gutterBottom>
+            {kitchenInfo.paragraph1}
+          </Typography>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.6 }}
+        >
+          <Typography variant="h6" gutterBottom>
+            {kitchenInfo.paragraph2}
+          </Typography>
+        </motion.div>
       </Box>
       <Catalog itemData={itemData}></Catalog>
     </Box>

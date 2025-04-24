@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { motion } from "framer-motion";
 import serviceInfo from "../../information/about/serviceInfo.json";
 import { ServiceCard } from "./ServiceCard/ServiceCard";
 import aboutInfo from "../../information/about/aboutInfo.json";
@@ -16,13 +17,26 @@ export const About = () => {
       }}
     >
       <Box sx={{ mt: 4, maxWidth: "900px", mx: "auto", textAlign: "justify" }}>
-        <Typography variant="h4" gutterBottom>
-          {aboutInfo.title}
-        </Typography>
-        <Typography variant="h6" gutterBottom>
-          {aboutInfo.description}
-        </Typography>
-        
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.6 }}
+        >
+          <Typography variant="h4" gutterBottom>
+            {aboutInfo.title}
+          </Typography>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true, amount: 0.6 }}
+        >
+          <Typography variant="h6" gutterBottom>
+            {aboutInfo.description}
+          </Typography>
+        </motion.div>
       </Box>
 
       <Box sx={{ mt: 6 }}>
@@ -32,13 +46,28 @@ export const About = () => {
         <Box
           sx={{
             display: "flex",
-            flexWrap: "wrap",
+            flexWrap: "nowrap",
             justifyContent: "center",
-            gap: 4, // to create spacing between items
+            gap: 4,
+            overflowX: "auto",
+            paddingBottom: 2,
           }}
         >
           {serviceInfo.map((_serviceInfo, index) => (
-            <ServiceCard index={index} key={index} />
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.6,
+                ease: "easeOut",
+                delay: index * 0.15,
+              }}
+              style={{ width: "25%" }}
+              viewport={{ once: true, amount: 0.4 }}
+            >
+              <ServiceCard index={index} />
+            </motion.div>
           ))}
         </Box>
       </Box>

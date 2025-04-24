@@ -11,7 +11,7 @@ export const ServiceCard = (props: Props) => {
 
   return (
     <Box
-      sx={{ width: { xs: "100%", sm: "48%", md: "30%" }, cursor: "pointer" }}
+      sx={{ width: "100%", cursor: "pointer" }}
       onClick={() => navigate(serviceInfo[props.index].href)}
     >
       <Card
