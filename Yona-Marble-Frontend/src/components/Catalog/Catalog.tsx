@@ -70,15 +70,16 @@ export const Catalog = (props: Props) => {
           {props.itemData.map((item, index) => (
             <MotionImageListItem
               key={item.img}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{
-                duration: 0.6,
-                ease: "easeOut",
-                delay: index * 0.1,
+                duration: 0.8,
+                ease: "easeInOut",
+                delay: index * 0.2,
               }}
               whileHover={{ scale: 1.05 }}
               sx={{ cursor: "pointer" }}
+              viewport={{ once: true, amount: 0.4 }}
             >
               <img
                 onClick={() => handleClickOpen(index)}
