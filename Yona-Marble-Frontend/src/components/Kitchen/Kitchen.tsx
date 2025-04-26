@@ -19,7 +19,7 @@ export const Kitchen = () => {
         height: "70vh",
       }}
     >
-      <Box sx={{ mt: 4, maxWidth: "900px", mx: "auto", textAlign: "justify" }}>
+      <Box sx={{ mt: 4, maxWidth: "90vw", mx: "auto", textAlign: "justify" }}>
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -41,7 +41,7 @@ export const Kitchen = () => {
           </Typography>
         </motion.div>
       </Box>
-      <Catalog itemData={itemData}></Catalog>
+      <Catalog itemData={itemData} />
     </Box>
   );
 };

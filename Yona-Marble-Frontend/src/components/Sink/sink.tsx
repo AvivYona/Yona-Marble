@@ -16,7 +16,7 @@ export const Sink = () => {
         color: theme.palette.primary.contrastText,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        minHeight: "92vh",
+        minHeight: "70vh",
       }}
     >
       <Box sx={{ mt: 4, maxWidth: "900px", mx: "auto", textAlign: "justify" }}>

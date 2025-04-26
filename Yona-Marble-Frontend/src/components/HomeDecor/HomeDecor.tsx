@@ -18,7 +18,7 @@ export const HomeDecor = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           color: theme.palette.primary.contrastText,
-          minHeight: "92vh",
+          minHeight: "70vh",
         }}
       >
         <Box
@@ -45,7 +45,7 @@ export const HomeDecor = () => {
             </Typography>
           </motion.div>
         </Box>
-        <Catalog itemData={itemData}></Catalog>
+        <Catalog itemData={itemData} />
       </Box>
     </>
   );
