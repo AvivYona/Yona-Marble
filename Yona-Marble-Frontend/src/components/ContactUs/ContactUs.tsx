@@ -10,7 +10,7 @@ export const ContactUs = () => {
       sx={{
         color: "text.primary",
         p: 4,
-        minHeight: "60vh",
+        height: "92vh",
         display: "flex",
         justifyContent: "center",
       }}
@@ -19,12 +19,7 @@ export const ContactUs = () => {
         sx={{
           width: "80vw",
           display: "flex",
-          flexDirection: {
-            xs: "column",
-            sm: "column",
-            md: "column",
-            lg: "row",
-          },
+          flexDirection: "column",
           justifyContent: "space-around",
           alignItems: "center",
         }}
