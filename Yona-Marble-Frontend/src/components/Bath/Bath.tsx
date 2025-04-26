@@ -11,7 +11,7 @@ export const Bath = () => {
         sx={{
           p: 4,
           color: theme.palette.primary.contrastText,
-          height: "60vh",
+          height: "65vh",
         }}
       >
         <Box
@@ -28,7 +28,7 @@ export const Bath = () => {
             </Typography>
           </motion.div>
         </Box>
-        <Catalog itemData={itemData}></Catalog>
+        <Catalog itemData={itemData} />
       </Box>
     </>
   );
