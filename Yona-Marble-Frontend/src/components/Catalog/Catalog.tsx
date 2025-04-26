@@ -1,8 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/effect-coverflow";
+import "swiper/swiper-bundle.css";
 import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
 
 interface ItemData {
