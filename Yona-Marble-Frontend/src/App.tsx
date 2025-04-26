@@ -4,7 +4,7 @@ import { MainPage } from "./components/MainPage/MainPage";
 import { About } from "./components/About/About";
 import theme from "./theme";
 import { ThemeProvider } from "@mui/material/styles";
-import { CssBaseline, Box } from "@mui/material";
+import { CssBaseline } from "@mui/material";
 import { ContactUs } from "./components/ContactUs/ContactUs";
 import { Kitchen } from "./components/Kitchen/Kitchen";
 import { Bath } from "./components/Bath/Bath";
@@ -69,27 +69,13 @@ export const App = () => {
               backgroundColor: "#fff",
             }}
           >
-            <Box sx={{ bgcolor: "#ffffff" }}>
-              <MainPage />
-            </Box>
-            <Box sx={{ bgcolor: "#ffffff" }}>
-              <About />
-            </Box>
-            <Box sx={{ bgcolor: "#ffffff" }}>
-              <ContactUs />
-            </Box>
-            <Box sx={{ bgcolor: "#ffffff" }}>
-              <Kitchen />
-            </Box>
-            <Box sx={{ bgcolor: "#ffffff" }}>
-              <Bath />
-            </Box>
-            <Box sx={{ bgcolor: "#ffffff" }}>
-              <HomeDecor />
-            </Box>
-            <Box sx={{ bgcolor: "#ffffff" }}>
-              <Sink />
-            </Box>
+            <MainPage />
+            <About />
+            <Kitchen />
+            <Bath />
+            <HomeDecor />
+            <Sink />
+            <ContactUs />
           </motion.div>
         </Router>
         <CssBaseline />
