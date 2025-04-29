@@ -4,11 +4,13 @@ import aboutInfo from "../../information/about/aboutInfo.json";
 import { motion } from "framer-motion";
 import theme from "../../theme";
 import logo from "/images/yona-marble-logo-black.jpeg";
+import Lottie from "lottie-react";
+import scrollDownAnimation from "../../assets/scrollDown.json";
 
 const HeroSection = styled(Box)(() => ({
   backgroundSize: "cover",
   backgroundPosition: "center",
-  height: "100vh",
+  height: "90vh",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -58,6 +60,13 @@ export const MainPage = () => {
           </Typography>
         </Box>
       </HeroSection>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <Lottie
+          animationData={scrollDownAnimation}
+          loop
+          style={{ width: isSmallScreen ? 80 : 120 }}
+        />
+      </Box>
     </Box>
   );
 };

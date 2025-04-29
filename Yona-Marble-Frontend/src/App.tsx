@@ -15,7 +15,7 @@ import { Accessibility } from "accessibility";
 import { useEffect } from "react";
 import { Sink } from "./components/Sink/sink";
 import { motion } from "framer-motion";
-
+import { ToastContainer } from "react-toastify";
 export const App = () => {
   useEffect(() => {
     const accessibilityOptions = {
@@ -78,6 +78,7 @@ export const App = () => {
             <ContactUs />
           </motion.div>
         </Router>
+        <ToastContainer rtl />
         <CssBaseline />
       </ThemeProvider>
     </div>
