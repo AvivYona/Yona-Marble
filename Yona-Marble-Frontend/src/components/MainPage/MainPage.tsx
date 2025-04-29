@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import theme from "../../theme";
 import logo from "/images/yona-marble-logo-black.jpeg";
 import Lottie from "lottie-react";
-import scrollDownAnimation from "../../../public/assets/scrollDown.json";
+import scrollDownAnimation from "../../assets/scrollDown.json";
 
 const HeroSection = styled(Box)(() => ({
   backgroundSize: "cover",
