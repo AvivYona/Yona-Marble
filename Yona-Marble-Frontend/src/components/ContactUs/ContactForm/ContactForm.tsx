@@ -1,7 +1,13 @@
 import React, { SyntheticEvent, useState } from "react";
-import { Box, TextField, Button } from "@mui/material";
+import { Box, TextField, Button, Alert, Snackbar } from "@mui/material";
+import Slide from "@mui/material/Slide";
+const SlideTransition = (props: any) => {
+  return <Slide {...props} direction="up" />;
+};
 import { sendEmail } from "../../../utils/mail";
 import theme from "../../../theme";
+import { EmailJSResponseStatus } from "emailjs-com";
+import { showToast } from "../../../utils/toast";
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -47,17 +53,22 @@ export const ContactForm = () => {
     setErrors(newErrors);
   };
 
-  const handleSubmit = (event: SyntheticEvent) => {
+  const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault(); //This is important, i'm not sure why, but the email won't send without it
     const isValid = validateForm();
     if (isValid) {
       const formElement = event.currentTarget as HTMLFormElement;
-      sendEmail(formElement);
-      console.log("Form Submitted:", formData);
-      setFormData({
-        fullName: "",
-        phone: "",
-      });
+      try {
+        const res: EmailJSResponseStatus = await sendEmail(formElement);
+        if (res.status === 200) {
+          showToast("success", "ההודעה התקבלה בהצלחה!");
+          setFormData({ fullName: "", phone: "" });
+        } else {
+          showToast("error", "אירעה שגיאה בעת שליחת ההודעה, אנא התקשרו אלינו");
+        }
+      } catch (error) {
+        showToast("error", "אירעה שגיאה בעת שליחת ההודעה, אנא התקשרו אלינו");
+      }
     }
   };
 
@@ -100,7 +111,7 @@ export const ContactForm = () => {
       onSubmit={handleSubmit} // Add this line to handle form submission
     >
       {/* Full Name Field */}
-      <Box sx={{ marginBottom: 3, width: "100%" }}>
+      <Box sx={{ marginBottom: 3, width: "100%", mb: "3" }}>
         <TextField
           fullWidth
           label="שם"
@@ -113,7 +124,11 @@ export const ContactForm = () => {
           variant="standard"
           slotProps={{
             input: {
-              sx: { borderRadius: "8px", textAlign: "right" },
+              sx: {
+                borderRadius: "8px",
+                textAlign: "right",
+                color: theme.palette.primary.contrastText,
+              },
             },
             inputLabel: {
               sx: {
