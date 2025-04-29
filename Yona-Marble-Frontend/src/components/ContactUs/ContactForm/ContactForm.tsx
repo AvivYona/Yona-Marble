@@ -1,9 +1,5 @@
 import React, { SyntheticEvent, useState } from "react";
-import { Box, TextField, Button, Alert, Snackbar } from "@mui/material";
-import Slide from "@mui/material/Slide";
-const SlideTransition = (props: any) => {
-  return <Slide {...props} direction="up" />;
-};
+import { Box, TextField, Button } from "@mui/material";
 import { sendEmail } from "../../../utils/mail";
 import theme from "../../../theme";
 import { EmailJSResponseStatus } from "emailjs-com";
