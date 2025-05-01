@@ -10,7 +10,7 @@ import scrollDownAnimation from "../../assets/scrollDown.json";
 const HeroSection = styled(Box)(() => ({
   backgroundSize: "cover",
   backgroundPosition: "center",
-  height: "90vh",
+  height: "80vh",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -22,7 +22,7 @@ const HeroSection = styled(Box)(() => ({
 export const MainPage = () => {
   const isSmallScreen = useMediaQuery("(max-width:720px)");
   return (
-    <Box>
+    <Box sx={{ height: "94vh" }}>
       <HeroSection>
         <Box sx={{ position: "relative", zIndex: 1 }}>
           <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
