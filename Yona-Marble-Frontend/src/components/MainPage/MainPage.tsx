@@ -10,7 +10,7 @@ import scrollDownAnimation from "../../assets/scrollDown.json";
 const HeroSection = styled(Box)(() => ({
   backgroundSize: "cover",
   backgroundPosition: "center",
-  height: "90vh",
+  height: "80vh",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
