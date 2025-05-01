@@ -22,7 +22,7 @@ const HeroSection = styled(Box)(() => ({
 export const MainPage = () => {
   const isSmallScreen = useMediaQuery("(max-width:720px)");
   return (
-    <Box>
+    <Box sx={{ height: "93vh" }}>
       <HeroSection>
         <Box sx={{ position: "relative", zIndex: 1 }}>
           <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>

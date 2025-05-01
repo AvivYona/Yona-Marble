@@ -4,7 +4,7 @@ import { MainPage } from "./components/MainPage/MainPage";
 import { About } from "./components/About/About";
 import theme from "./theme";
 import { ThemeProvider } from "@mui/material/styles";
-import { CssBaseline } from "@mui/material";
+import { CssBaseline, Box } from "@mui/material";
 import { ContactUs } from "./components/ContactUs/ContactUs";
 import { Kitchen } from "./components/Kitchen/Kitchen";
 import { Bath } from "./components/Bath/Bath";
@@ -57,26 +57,34 @@ export const App = () => {
         <Router>
           <Analytics />
           <SpeedInsights />
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-            style={{
-              scrollSnapType: "y mandatory",
-              overflowY: "scroll",
-              height: "100vh",
-              backgroundColor: "#fff",
+          <Box
+            sx={{
+              backgroundRepeat: "repeat-y",
+              backgroundSize: "cover",
             }}
           >
-            <MainPage />
-            <About />
-            <Kitchen />
-            <Bath />
-            <HomeDecor />
-            <Sink />
-            <ContactUs />
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
+              style={{
+                scrollSnapType: "y mandatory",
+                overflowY: "scroll",
+                height: "100vh",
+                backgroundImage:
+                  "url('/images/backgrounds/elegant_hand_painted_alcohol_ink_background_with_gold_glitter_0609-min.jpg')",
+              }}
+            >
+              <MainPage />
+              <About />
+              <Kitchen />
+              <Bath />
+              <HomeDecor />
+              <Sink />
+              <ContactUs />
+            </motion.div>
+          </Box>
         </Router>
         <ToastContainer rtl />
         <CssBaseline />
