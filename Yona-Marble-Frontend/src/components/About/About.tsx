@@ -5,7 +5,7 @@ import { ServiceCard } from "./ServiceCard/ServiceCard";
 import aboutInfo from "../../information/about/aboutInfo.json";
 import theme from "../../theme";
 export const About = () => {
-  const isSmallScreen = useMediaQuery("(max-width:720px)");
+  const isSmallScreen = useMediaQuery("(max-width:1048px)");
 
   return (
     <Box
@@ -32,7 +32,7 @@ export const About = () => {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true, amount: 0.6 }}
         >
-          <Typography variant="h6" gutterBottom>
+          <Typography variant="h6" gutterBottom sx={{ whiteSpace: "pre-line" }}>
             {aboutInfo.description}
           </Typography>
         </motion.div>
@@ -67,7 +67,7 @@ export const About = () => {
                 ease: "easeInOut",
                 delay: index * 0.2,
               }}
-              style={{ width: isSmallScreen ? "100%" : "25%" }}
+              style={{ width: isSmallScreen ? "100%" : "30%" }}
               viewport={{ once: true, amount: 0.4 }}
             >
               <ServiceCard index={index} />
