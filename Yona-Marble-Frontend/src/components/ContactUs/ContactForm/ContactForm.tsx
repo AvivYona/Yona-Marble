@@ -55,13 +55,9 @@ export const ContactForm = () => {
     if (isValid) {
       const formElement = event.currentTarget as HTMLFormElement;
       try {
-        const res: EmailJSResponseStatus = await sendEmail(formElement);
-        if (res.status === 200) {
-          showToast("success", "ההודעה התקבלה בהצלחה!");
-          setFormData({ fullName: "", phone: "" });
-        } else {
-          showToast("error", "אירעה שגיאה בעת שליחת ההודעה, אנא התקשרו אלינו");
-        }
+        showToast("success", "ההודעה נשלחה בהצלחה!");
+        await sendEmail(formElement);
+        setFormData({ fullName: "", phone: "" });
       } catch (error) {
         showToast("error", "אירעה שגיאה בעת שליחת ההודעה, אנא התקשרו אלינו");
       }
