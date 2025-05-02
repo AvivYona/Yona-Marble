@@ -2,7 +2,6 @@ import React, { SyntheticEvent, useState } from "react";
 import { Box, TextField, Button } from "@mui/material";
 import { sendEmail } from "../../../utils/mail";
 import theme from "../../../theme";
-import { EmailJSResponseStatus } from "emailjs-com";
 import { showToast } from "../../../utils/toast";
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
