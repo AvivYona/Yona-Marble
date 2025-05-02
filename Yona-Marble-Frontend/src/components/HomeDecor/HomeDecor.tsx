@@ -16,7 +16,7 @@ export const HomeDecor = () => {
         sx={{
           p: 4,
           color: theme.palette.primary.contrastText,
-          marginTop: "20vh",
+          marginTop: "25vh",
           minHeight: "70vh",
         }}
       >
