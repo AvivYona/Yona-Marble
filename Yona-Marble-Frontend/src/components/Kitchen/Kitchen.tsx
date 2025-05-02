@@ -14,20 +14,25 @@ export const Kitchen = () => {
       sx={{
         p: 4,
         color: theme.palette.primary.contrastText,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
         height: "70vh",
       }}
     >
-      <Box sx={{ mt: 4, maxWidth: "90vw", mx: "auto", textAlign: "justify" }}>
+      <Box
+        sx={{
+          mt: 4,
+          maxWidth: "90vw",
+          mx: "auto",
+          textAlign: "justify",
+        }}
+      >
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.6 }}
         >
-          <Typography variant="h5" gutterBottom>
-            {kitchenInfo.paragraph1}
+          <Typography variant="h4" gutterBottom>
+            שיש למטבח
           </Typography>
         </motion.div>
         <motion.div
@@ -37,7 +42,7 @@ export const Kitchen = () => {
           viewport={{ once: true, amount: 0.6 }}
         >
           <Typography variant="h6" gutterBottom>
-            {kitchenInfo.paragraph2}
+            {kitchenInfo.paragraph1}
           </Typography>
         </motion.div>
       </Box>
