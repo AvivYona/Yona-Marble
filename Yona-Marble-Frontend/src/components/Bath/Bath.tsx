@@ -12,7 +12,7 @@ export const Bath = () => {
           p: 4,
           color: theme.palette.primary.contrastText,
           height: "70vh",
-          marginTop: "20vh",
+          marginTop: "35vh",
         }}
       >
         <Box
