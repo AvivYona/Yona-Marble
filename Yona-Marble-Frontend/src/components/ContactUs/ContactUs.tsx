@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Box, Typography } from "@mui/material";
 import theme from "../../theme";
-import { IconsBox } from "./IconsBox/IconsBox";
 import { ContactForm } from "./ContactForm/ContactForm";
 
 export const ContactUs = () => {
