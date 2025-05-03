@@ -16,8 +16,7 @@ import { useEffect } from "react";
 import { Sink } from "./components/Sink/sink";
 import { motion } from "framer-motion";
 import { ToastContainer } from "react-toastify";
-import Lottie from "lottie-react";
-import scrollTopLottie from "./assets/scrollToTop.json";
+
 export const App = () => {
   useEffect(() => {
     const accessibilityOptions = {
