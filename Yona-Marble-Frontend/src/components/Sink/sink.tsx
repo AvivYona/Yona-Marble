@@ -14,7 +14,7 @@ export const Sink = () => {
       sx={{
         p: 4,
         color: theme.palette.primary.contrastText,
-        minHeight: "70vh",
+        minHeight: "wrap",
       }}
     >
       <Box

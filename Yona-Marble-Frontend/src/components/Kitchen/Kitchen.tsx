@@ -14,7 +14,7 @@ export const Kitchen = () => {
       sx={{
         p: 4,
         color: theme.palette.primary.contrastText,
-        height: "70vh",
+        height: "wrap",
       }}
     >
       <Box
