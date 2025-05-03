@@ -8,8 +8,8 @@ body {
 :root {
   --_access-icon-top: unset;
   --_access-icon-left: unset;
-  --_access-icon-right: 20px;
-  --_access-icon-bottom: 40px;
+  --_access-icon-right: 10px;
+  --_access-icon-bottom: 90px;
   --_access-icon-z-index: 9999 !important;
   --_access-icon-display: block !important;
   --_access-icon-visible: visible !important;

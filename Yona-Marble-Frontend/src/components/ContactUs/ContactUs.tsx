@@ -9,7 +9,7 @@ export const ContactUs = () => {
       sx={{
         color: "text.primary",
         p: 4,
-        height: "50vh",
+        height: "90vh",
         display: "flex",
         justifyContent: "center",
       }}
