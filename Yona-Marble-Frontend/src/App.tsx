@@ -16,6 +16,7 @@ import { useEffect } from "react";
 import { Sink } from "./components/Sink/sink";
 import { motion } from "framer-motion";
 import { ToastContainer } from "react-toastify";
+import { IconsBox } from "./components/ContactUs/IconsBox/IconsBox";
 
 export const App = () => {
   useEffect(() => {
@@ -63,6 +64,7 @@ export const App = () => {
             sx={{
               backgroundRepeat: "repeat-y",
               backgroundSize: "cover",
+              position: "relative",
             }}
           >
             <motion.div
@@ -87,6 +89,20 @@ export const App = () => {
               <Sink />
               <ContactUs />
             </motion.div>
+
+            <Box
+              sx={{
+                position: "fixed",
+                bottom: 0,
+                width: "100vw",
+                zIndex: 1200,
+                backdropFilter: "blur(10px)",
+                backgroundColor: "rgba(255, 255, 255, 0.4)",
+                borderTop: "1px solid rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              <IconsBox />
+            </Box>
           </Box>
         </Router>
         <ToastContainer rtl />
