@@ -12,10 +12,12 @@ import { HomeDecor } from "./components/HomeDecor/HomeDecor";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Accessibility } from "accessibility";
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Sink } from "./components/Sink/sink";
 import { motion } from "framer-motion";
 import { ToastContainer } from "react-toastify";
+import Lottie from "lottie-react";
+import scrollTopLottie from "./assets/scrollToTop.json";
 export const App = () => {
   useEffect(() => {
     const accessibilityOptions = {
@@ -51,6 +53,29 @@ export const App = () => {
 
     new Accessibility(accessibilityOptions);
   }, []);
+
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scrollEl = scrollContainerRef.current;
+    if (!scrollEl) return;
+
+    const handleScroll = () => {
+      setShowScrollTop(scrollEl.scrollTop > 100);
+    };
+
+    scrollEl.addEventListener("scroll", handleScroll);
+    return () => scrollEl.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    const scrollEl = scrollContainerRef.current;
+    if (scrollEl) {
+      scrollEl.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <div dir="rtl" className={style.container}>
       <ThemeProvider theme={theme}>
@@ -59,11 +84,14 @@ export const App = () => {
           <SpeedInsights />
           <Box
             sx={{
+              backgroundImage:
+                "url('/images/backgrounds/elegant_hand_painted_alcohol_ink_background_with_gold_glitter_0609-min.jpg')",
               backgroundRepeat: "repeat-y",
               backgroundSize: "cover",
             }}
           >
             <motion.div
+              ref={scrollContainerRef}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -73,8 +101,7 @@ export const App = () => {
                 overflowY: "scroll",
                 overflowX: "hidden",
                 height: "100vh",
-                backgroundImage:
-                  "url('/images/backgrounds/elegant_hand_painted_alcohol_ink_background_with_gold_glitter_0609-min.jpg')",
+                backgroundImage: "none",
               }}
             >
               <MainPage />
@@ -85,6 +112,23 @@ export const App = () => {
               <Sink />
               <ContactUs />
             </motion.div>
+
+            {showScrollTop && (
+              <Box
+                onClick={scrollToTop}
+                sx={{
+                  position: "fixed",
+                  bottom: 16,
+                  left: 16,
+                  width: 60,
+                  height: 100,
+                  cursor: "pointer",
+                  zIndex: 1300,
+                }}
+              >
+                <Lottie animationData={scrollTopLottie} loop autoplay />
+              </Box>
+            )}
           </Box>
         </Router>
         <ToastContainer rtl />

@@ -1,18 +1,18 @@
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import serviceInfo from "../../information/about/serviceInfo.json";
-import { ServiceCard } from "./ServiceCard/ServiceCard";
+// import serviceInfo from "../../information/about/serviceInfo.json";
+// import { ServiceCard } from "./ServiceCard/ServiceCard";
 import aboutInfo from "../../information/about/aboutInfo.json";
 import theme from "../../theme";
 export const About = () => {
-  const isSmallScreen = useMediaQuery("(max-width:1048px)");
+  // const isSmallScreen = useMediaQuery("(max-width:1048px)");
 
   return (
     <Box
       sx={{
         p: 4,
         color: theme.palette.primary.contrastText,
-        minHeight: "92vh",
+        minHeight: "wrap",
       }}
     >
       <Box sx={{ mt: 4, maxWidth: "900px", mx: "auto", textAlign: "justify" }}>
@@ -38,7 +38,7 @@ export const About = () => {
         </motion.div>
       </Box>
 
-      <Box sx={{ mt: 6 }}>
+      {/* <Box sx={{ mt: 6 }}>
         <Typography
           variant="h2"
           gutterBottom
@@ -74,7 +74,7 @@ export const About = () => {
             </motion.div>
           ))}
         </Box>
-      </Box>
+      </Box> */}
     </Box>
   );
 };
