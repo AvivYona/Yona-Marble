@@ -84,8 +84,6 @@ export const App = () => {
           <SpeedInsights />
           <Box
             sx={{
-              backgroundImage:
-                "url('/images/backgrounds/elegant_hand_painted_alcohol_ink_background_with_gold_glitter_0609-min.jpg')",
               backgroundRepeat: "repeat-y",
               backgroundSize: "cover",
             }}
@@ -101,7 +99,8 @@ export const App = () => {
                 overflowY: "scroll",
                 overflowX: "hidden",
                 height: "100vh",
-                backgroundImage: "none",
+                backgroundImage:
+                  "url('/images/backgrounds/elegant_hand_painted_alcohol_ink_background_with_gold_glitter_0609-min.jpg')",
               }}
             >
               <MainPage />
