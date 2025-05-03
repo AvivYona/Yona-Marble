@@ -4,7 +4,6 @@ import EmailIcon from "@mui/icons-material/Email";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import DirectionsIcon from "@mui/icons-material/Directions";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 import { IconBox } from "./IconBox/IconBox";
 
@@ -36,12 +35,6 @@ export const IconsBox = () => {
       Icon: FacebookIcon,
     },
     {
-      href: "",
-      additionalInfo: "א׳ - ה׳ 08:30 עד 17:00 \n  ו׳ וערבי חג 08:30 עד 12:00",
-      Icon: AccessTimeIcon,
-    },
-
-    {
       href: "https://www.instagram.com/yonamarble_ltd/",
       additionalInfo: "yonamarble_ltd",
       Icon: InstagramIcon,
@@ -54,7 +47,6 @@ export const IconsBox = () => {
         alignItems: "center",
         justifyContent: "center",
         flexWrap: "wrap",
-        width: { xs: "100%", md: "80%" },
         mx: "auto",
         p: "2",
       }}
