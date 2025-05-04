@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
-import { useMediaQuery, Box } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
 
