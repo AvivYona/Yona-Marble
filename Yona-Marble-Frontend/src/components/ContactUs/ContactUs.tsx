@@ -31,18 +31,19 @@ export const ContactUs = () => {
         >
           <Box
             sx={{
-              width: "60vw",
+              width: "90vw",
+              height: "25vw",
               backdropFilter: "blur(10px)",
               backgroundColor: "rgba(255, 255, 255, 0.4)",
               borderTop: "1px solid rgba(0, 0, 0, 0.1)",
-              borderRadius: "calc(1vh + 1vw)",
+              borderRadius: "calc(3vh + 1vw)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
             }}
           >
             <Typography
-              variant="h3"
+              variant="h2"
               sx={{ mt: 2, textAlign: "center" }}
               color={theme.palette.primary.contrastText}
             >
