@@ -3,7 +3,6 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import DirectionsIcon from "@mui/icons-material/Directions";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import { IconBox } from "./IconBox/IconBox";

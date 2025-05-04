@@ -28,7 +28,7 @@ export const Sink = () => {
       <Box
         sx={{
           mt: 4,
-          maxWidth: "80vw",
+          maxWidth: "70vw",
           mx: "auto",
           textAlign: "justify",
           mb: 9,
@@ -87,7 +87,10 @@ export const Sink = () => {
               >
                 {sinkInfo.paragraph1}
               </Typography>
-              <Button variant="outlined" sx={{ borderRadius: '20px', color: 'black', borderColor:'black' }} endIcon={<CloseIcon sx={{ mr: 1 }} />} onClick={handleToggle}>
+              <Button variant="outlined" 
+                sx={{ borderRadius: '20px', color: 'black', borderColor:'black' , mt:3}} 
+                endIcon={<CloseIcon sx={{ mr: 1 }} />} 
+                onClick={handleToggle}>
                 סגור
               </Button>
             </motion.div>
