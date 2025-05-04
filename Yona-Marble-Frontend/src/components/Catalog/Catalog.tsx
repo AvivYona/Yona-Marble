@@ -1,7 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
-import { useEffect, useState } from "react";
 import { useMediaQuery, Box } from "@mui/material";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
@@ -18,16 +17,6 @@ export const Catalog = (props: Props) => {
   const isSmall = useMediaQuery("(max-width:600px)");
   const containerWidth = isSmall ? "90vw" : "70vw";
   const containerHeight = isSmall ? "25vh" : "40vh";
-
-  const [showScrollHint, setShowScrollHint] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) setShowScrollHint(false);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <>
@@ -119,22 +108,6 @@ export const Catalog = (props: Props) => {
           </Gallery>
         </div>
       </div>
-      {showScrollHint && (
-        <Box
-          component="img"
-          src="/animations/scroll-down.gif"
-          alt="Scroll down"
-          sx={{
-            position: "fixed",
-            left: "50%",
-            transform: "translateX(-50%)",
-            bottom: "calc(env(safe-area-inset-bottom, 0px) + 16px)",
-            zIndex: 9999,
-            width: 40,
-            opacity: 0.8,
-          }}
-        />
-      )}
     </>
   );
 };
