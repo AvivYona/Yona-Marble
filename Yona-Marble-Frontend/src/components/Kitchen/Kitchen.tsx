@@ -50,17 +50,8 @@ export const Kitchen = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.6 }}
         >
-          
-          {/* <Typography variant="h6" gutterBottom>
-            {kitchenInfo.paragraph1}
-          </Typography> */}
-
-          {/* <Typography variant="h6" gutterBottom>
-            המטבח הוא לב הבית – המקום שבו אנו מבשלים, מתכנסים ויוצרים זיכרונות.
-            משטח השיש הוא האלמנט המרכזי שמשפיע על הפונקציונליות והעיצוב.
-          </Typography> */}
           <Typography variant="h6" gutterBottom textAlign="justify">
-            שיש למטבח – לב הבית מתחיל כאן
+            {kitchenInfo.title}
           </Typography>
 
           <Typography variant="body1" gutterBottom textAlign="justify">

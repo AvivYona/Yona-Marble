@@ -46,15 +46,15 @@ export const About = () => {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true, amount: 0.6 }}
         >
-          <Typography variant="body1" gutterBottom sx={{ whiteSpace: "pre-line", maxWidth: "900px"}}>
+          <Typography variant="body1" gutterBottom sx={{ whiteSpace: "pre-line", maxWidth: "80vw"}}>
             {aboutInfo.desc1}
           </Typography>
 
-          <Typography variant="body1" gutterBottom sx={{ whiteSpace: "pre-line", maxWidth: "900px"}}>
+          <Typography variant="body1" gutterBottom sx={{ whiteSpace: "pre-line", maxWidth: "80vw"}}>
             {aboutInfo.desc2}
           </Typography>
 
-          <Typography variant="body1" gutterBottom sx={{ whiteSpace: "pre-line", maxWidth: "900px"}}>
+          <Typography variant="body1" gutterBottom sx={{ whiteSpace: "pre-line", maxWidth: "80vw"}}>
             {aboutInfo.desc3}
           </Typography>
 

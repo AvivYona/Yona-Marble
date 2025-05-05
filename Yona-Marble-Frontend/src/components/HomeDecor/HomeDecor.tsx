@@ -54,22 +54,25 @@ export const HomeDecor = () => {
             transition={{ duration: 0.9, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            {/* <Typography variant="h6" gutterBottom>
-              {homeDecorInfo.paragraph1}
-            </Typography> */}
-
-            <Typography variant="h6" gutterBottom textAlign="justify">
-              מעבר לשיש – עיצוב רהיטים ואלמנטים בהתאמה אישית מבית שיש יונה   
+            <Typography variant="h6" 
+            gutterBottom 
+            textAlign="justify">
+              {homeDecorInfo.title}
             </Typography>
 
-            <Typography variant="body1" gutterBottom textAlign="justify" sx={{ whiteSpace: "pre-line" }}>
+            <Typography variant="body1" 
+            gutterBottom 
+            textAlign="justify" 
+            sx={{ whiteSpace: "pre-line" }}>
               {homeDecorInfo["homeDecor-short"]}
             </Typography>
             
             {/* כפתור לפרטים נוספים */}
             {!showMore && (
             <Box mt={2}>
-              <Button variant="outlined" sx={{ borderRadius: '20px', color: 'black', borderColor:'black' }} endIcon={<KeyboardBackspaceIcon sx={{ mr: 1 }} />}
+              <Button variant="outlined" 
+              sx={{ borderRadius: '20px', color: 'black', borderColor:'black' }} 
+              endIcon={<KeyboardBackspaceIcon sx={{ mr: 1 }} />}
               onClick={handleToggle}>
                 לפרטים נוספים
               </Button>

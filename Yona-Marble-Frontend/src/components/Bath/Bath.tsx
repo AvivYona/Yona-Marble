@@ -49,11 +49,9 @@ export const Bath = () => {
             transition={{ duration: 0.9, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            {/* <Typography variant="h6" gutterBottom>
-              {bathInfo.paragraph1}
-            </Typography> */}
+            
             <Typography variant="h6" gutterBottom textAlign="justify">
-              שיש לחדר האמבטיה – יופי, נוחות ועמידות במקום הכי אישי בבית  
+              {bathInfo.title}
             </Typography>
 
             <Typography variant="body1" gutterBottom textAlign="justify" sx={{ whiteSpace: "pre-line" }}>

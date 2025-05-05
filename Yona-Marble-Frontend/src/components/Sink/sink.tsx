@@ -51,22 +51,25 @@ export const Sink = () => {
           transition={{ duration: 0.9, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.8 }}
         >
-          {/* <Typography variant="h6" gutterBottom sx={{ display: "inline" }}>
-            {sinkInfo.paragraph1}
-          </Typography> */}
-
-            <Typography variant="h6" gutterBottom textAlign="justify">
-              כיורים וברזים – השלמת המראה עם פונקציונליות מושלמת    
+            <Typography variant="h6" 
+            gutterBottom 
+            textAlign="justify">
+              {sinkInfo.title}
             </Typography>
 
-            <Typography variant="body1" gutterBottom textAlign="justify" sx={{ whiteSpace: "pre-line" }}>
+            <Typography variant="body1" 
+            gutterBottom 
+            textAlign="justify" 
+            sx={{ whiteSpace: "pre-line" }}>
               {sinkInfo["sink-short"]}
             </Typography>
             
             {/* כפתור לפרטים נוספים */}
             {!showMore && (
             <Box mt={2}>
-              <Button variant="outlined" sx={{ borderRadius: '20px', color: 'black', borderColor:'black'}} endIcon={<KeyboardBackspaceIcon sx={{ mr: 1 }} />}
+              <Button variant="outlined" 
+              sx={{ borderRadius: '20px', color: 'black', borderColor:'black'}} 
+              endIcon={<KeyboardBackspaceIcon sx={{ mr: 1 }} />}
               onClick={handleToggle}>
                 לפרטים נוספים
               </Button>
