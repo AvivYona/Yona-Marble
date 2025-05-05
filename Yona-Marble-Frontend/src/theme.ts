@@ -51,8 +51,8 @@ const theme = createTheme({
       color: "#e0e0e0",
     },
     body1: {
-      fontSize: "1rem",
-      color: "#bdbdbd", // Softer grey for body text
+      fontSize: "1.1rem",
+      color: "#181A20", // Softer grey for body text
     },
     body2: {
       fontSize: "0.875rem",

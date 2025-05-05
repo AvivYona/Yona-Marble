@@ -3,8 +3,8 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import DirectionsIcon from "@mui/icons-material/Directions";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
+import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import { IconBox } from "./IconBox/IconBox";
 
 interface IconLink {
@@ -27,7 +27,7 @@ export const IconsBox = () => {
     {
       href: "https://www.waze.com/he/live-map/directions/%D7%A9%D7%99%D7%A9-%D7%99%D7%95%D7%A0%D7%94-%D7%94%D7%9E%D7%A9%D7%91%D7%99%D7%A8-32-%D7%97%D7%95%D7%9C%D7%95%D7%9F?to=place.w.22806848.228134017.335280",
       additionalInfo: "המשביר 32 חולון",
-      Icon: DirectionsIcon,
+      Icon: FmdGoodIcon,
     },
     {
       href: "https://www.facebook.com/YonaMarble/",

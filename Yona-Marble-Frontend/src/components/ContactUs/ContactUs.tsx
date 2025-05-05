@@ -16,7 +16,6 @@ export const ContactUs = () => {
     >
       <Box
         sx={{
-          width: "80vw",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-around",
@@ -31,18 +30,19 @@ export const ContactUs = () => {
         >
           <Box
             sx={{
-              width: "60vw",
+              width: "70vw",
+              height: "30vw",
               backdropFilter: "blur(10px)",
               backgroundColor: "rgba(255, 255, 255, 0.4)",
               borderTop: "1px solid rgba(0, 0, 0, 0.1)",
-              borderRadius: "calc(1vh + 1vw)",
+              borderRadius: "calc(2vh + 1.5vw)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
             }}
           >
             <Typography
-              variant="h3"
+              variant="h2"
               sx={{ mt: 2, textAlign: "center" }}
               color={theme.palette.primary.contrastText}
             >
