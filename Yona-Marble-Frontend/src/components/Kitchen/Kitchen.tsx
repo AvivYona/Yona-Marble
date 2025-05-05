@@ -4,7 +4,8 @@ import kitchenInfo from "../../information/marbleKitchen/marbleKitchenInfo.json"
 import { motion } from "framer-motion";
 import theme from "../../theme";
 import { useState } from "react";
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
+import { ShowMoreButton } from "../ShowMoreButton/ShowMoreButton";
 //import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 export const Kitchen = () => {
   const itemData = [
@@ -61,30 +62,7 @@ export const Kitchen = () => {
           {/* כפתור לפרטים נוספים */}
           {!showMore && (
             <Box mt={1}>
-              {/* <Button variant="outlined" 
-              sx={{ borderRadius: '20px', color: 'black', borderColor:'black' , mt:3}} 
-              endIcon={<KeyboardBackspaceIcon sx={{ mr: 1 }} />}
-              onClick={handleToggle}>
-                לפרטים נוספים
-              </Button> */}
-
-              <Button
-                variant="text"
-                sx={{
-                  color: "black",
-                  px: 0,
-                  minWidth: 0,
-                  textTransform: "none",
-                  fontWeight: "bold",
-                  fontSize: "1rem",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  borderBottom: "2px solid #181A20", // קו תחתון
-                  borderRadius: 0,
-                }}
-                onClick={handleToggle}>
-                קרא עוד
-              </Button>
+              <ShowMoreButton handleTogle={handleToggle} />
             </Box>
           )}
 
@@ -102,7 +80,16 @@ export const Kitchen = () => {
               >
                 {kitchenInfo.paragraph1}
               </Typography>
-              <Button variant="outlined" sx={{ borderRadius: '20px', color: 'black', borderColor:'black' }} endIcon={<CloseIcon sx={{ mr: 1 }} />} onClick={handleToggle}>
+              <Button
+                variant="outlined"
+                sx={{
+                  borderRadius: "20px",
+                  color: "black",
+                  borderColor: "black",
+                }}
+                endIcon={<CloseIcon sx={{ mr: 1 }} />}
+                onClick={handleToggle}
+              >
                 סגור
               </Button>
             </motion.div>
