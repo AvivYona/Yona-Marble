@@ -5,7 +5,7 @@ import sinkInfo from "../../information/sink/sinkInfo.json";
 import theme from "../../theme";
 import { useState } from "react";
 //import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
 export const Sink = () => {
   const itemData = [
     { img: "/images/sinks/סבליין-350-לבן.png", title: "סבליין-350-לבן" },
@@ -16,7 +16,7 @@ export const Sink = () => {
   const [showMore, setShowMore] = useState(false);
 
   const handleToggle = () => setShowMore((prev) => !prev);
-  
+
   return (
     <Box
       sx={{
@@ -51,21 +51,21 @@ export const Sink = () => {
           transition={{ duration: 0.9, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.8 }}
         >
-            <Typography variant="h6" 
-            gutterBottom 
-            textAlign="justify">
-              {sinkInfo.title}
-            </Typography>
+          <Typography variant="h6" gutterBottom textAlign="justify">
+            {sinkInfo.title}
+          </Typography>
 
-            <Typography variant="body1" 
-            gutterBottom 
-            textAlign="justify" 
-            sx={{ whiteSpace: "pre-line" }}>
-              {sinkInfo["sink-short"]}
-            </Typography>
-            
-            {/* כפתור לפרטים נוספים */}
-            {!showMore && (
+          <Typography
+            variant="body1"
+            gutterBottom
+            textAlign="justify"
+            sx={{ whiteSpace: "pre-line" }}
+          >
+            {sinkInfo.sinkShort}
+          </Typography>
+
+          {/* כפתור לפרטים נוספים */}
+          {!showMore && (
             <Box mt={1}>
               {/* <Button variant="outlined" 
               sx={{ borderRadius: '20px', color: 'black', borderColor:'black'}} 
@@ -88,7 +88,8 @@ export const Sink = () => {
                   borderBottom: "2px solid #181A20", // קו תחתון
                   borderRadius: 0,
                 }}
-                onClick={handleToggle}>
+                onClick={handleToggle}
+              >
                 קרא עוד
               </Button>
             </Box>
@@ -108,19 +109,21 @@ export const Sink = () => {
               >
                 {sinkInfo.paragraph1}
               </Typography>
-              <Button variant="outlined" 
-                sx={{ borderRadius: '20px', color: 'black', borderColor:'black' , mt:3}} 
-                endIcon={<CloseIcon sx={{ mr: 1 }} />} 
-                onClick={handleToggle}>
+              <Button
+                variant="outlined"
+                sx={{
+                  borderRadius: "20px",
+                  color: "black",
+                  borderColor: "black",
+                  mt: 3,
+                }}
+                endIcon={<CloseIcon sx={{ mr: 1 }} />}
+                onClick={handleToggle}
+              >
                 סגור
               </Button>
             </motion.div>
           )}
-
-
-
-
-
         </motion.div>
       </Box>
       <Catalog itemData={itemData}></Catalog>
