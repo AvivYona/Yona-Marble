@@ -4,7 +4,7 @@ import { Catalog } from "../Catalog/Catalog";
 import sinkInfo from "../../information/sink/sinkInfo.json";
 import theme from "../../theme";
 import { useState } from "react";
-import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+//import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import CloseIcon from '@mui/icons-material/Close';
 export const Sink = () => {
   const itemData = [
@@ -67,11 +67,29 @@ export const Sink = () => {
             {/* כפתור לפרטים נוספים */}
             {!showMore && (
             <Box mt={2}>
-              <Button variant="outlined" 
+              {/* <Button variant="outlined" 
               sx={{ borderRadius: '20px', color: 'black', borderColor:'black'}} 
               endIcon={<KeyboardBackspaceIcon sx={{ mr: 1 }} />}
               onClick={handleToggle}>
                 לפרטים נוספים
+              </Button> */}
+
+              <Button
+                variant="text"
+                sx={{
+                  color: "black",
+                  px: 0,
+                  minWidth: 0,
+                  textTransform: "none",
+                  fontWeight: "bold",
+                  fontSize: "1rem",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  borderBottom: "2px solid #181A20", // קו תחתון
+                  borderRadius: 0,
+                }}
+                onClick={handleToggle}>
+                קרא עוד
               </Button>
             </Box>
           )}

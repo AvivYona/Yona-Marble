@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import theme from "../../theme";
 import { useState } from "react";
 import CloseIcon from '@mui/icons-material/Close';
-import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+//import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 export const Kitchen = () => {
   const itemData = [
     { img: "/images/kitchen/catalog_3.webp", title: "מטבח" },
@@ -61,11 +61,29 @@ export const Kitchen = () => {
           {/* כפתור לפרטים נוספים */}
           {!showMore && (
             <Box mt={2}>
-              <Button variant="outlined" 
+              {/* <Button variant="outlined" 
               sx={{ borderRadius: '20px', color: 'black', borderColor:'black' , mt:3}} 
               endIcon={<KeyboardBackspaceIcon sx={{ mr: 1 }} />}
               onClick={handleToggle}>
                 לפרטים נוספים
+              </Button> */}
+
+              <Button
+                variant="text"
+                sx={{
+                  color: "black",
+                  px: 0,
+                  minWidth: 0,
+                  textTransform: "none",
+                  fontWeight: "bold",
+                  fontSize: "1rem",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  borderBottom: "2px solid #181A20", // קו תחתון
+                  borderRadius: 0,
+                }}
+                onClick={handleToggle}>
+                קרא עוד
               </Button>
             </Box>
           )}
