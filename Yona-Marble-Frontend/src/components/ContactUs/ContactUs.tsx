@@ -36,7 +36,7 @@ export const ContactUs = () => {
               backdropFilter: "blur(10px)",
               backgroundColor: "rgba(255, 255, 255, 0.4)",
               borderTop: "1px solid rgba(0, 0, 0, 0.1)",
-              borderRadius: "calc(3vh + 1vw)",
+              borderRadius: "calc(2vh + 1.5vw)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",

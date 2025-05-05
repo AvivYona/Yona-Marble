@@ -66,7 +66,7 @@ export const Sink = () => {
             
             {/* כפתור לפרטים נוספים */}
             {!showMore && (
-            <Box mt={2}>
+            <Box mt={1}>
               {/* <Button variant="outlined" 
               sx={{ borderRadius: '20px', color: 'black', borderColor:'black'}} 
               endIcon={<KeyboardBackspaceIcon sx={{ mr: 1 }} />}

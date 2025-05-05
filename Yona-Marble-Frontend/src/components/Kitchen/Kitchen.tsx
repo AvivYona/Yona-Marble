@@ -60,7 +60,7 @@ export const Kitchen = () => {
 
           {/* כפתור לפרטים נוספים */}
           {!showMore && (
-            <Box mt={2}>
+            <Box mt={1}>
               {/* <Button variant="outlined" 
               sx={{ borderRadius: '20px', color: 'black', borderColor:'black' , mt:3}} 
               endIcon={<KeyboardBackspaceIcon sx={{ mr: 1 }} />}
