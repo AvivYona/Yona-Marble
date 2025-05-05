@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { Catalog } from "../Catalog/Catalog";
 import homeDecorInfo from "../../information/homeDecor/homeDecorInfo.json";
 import theme from "../../theme";
-//import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
+import { ShowMoreButton } from "../ShowMoreButton/ShowMoreButton";
 export const HomeDecor = () => {
   const itemData = [
     { img: "/images/homeDecor/IMG_6526.JPG", title: "image" },
@@ -17,7 +17,7 @@ export const HomeDecor = () => {
   const [showMore, setShowMore] = useState(false);
 
   const handleToggle = () => setShowMore((prev) => !prev);
-  
+
   return (
     <>
       <Box
@@ -54,72 +54,55 @@ export const HomeDecor = () => {
             transition={{ duration: 0.9, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            <Typography variant="h6" 
-            gutterBottom 
-            textAlign="justify">
+            <Typography variant="h6" gutterBottom textAlign="justify">
               {homeDecorInfo.title}
             </Typography>
 
-            <Typography variant="body1" 
-            gutterBottom 
-            textAlign="justify" 
-            sx={{ whiteSpace: "pre-line" }}>
+            <Typography
+              variant="body1"
+              gutterBottom
+              textAlign="justify"
+              sx={{ whiteSpace: "pre-line" }}
+            >
               {homeDecorInfo["homeDecor-short"]}
             </Typography>
-            
+
             {/* כפתור לפרטים נוספים */}
             {!showMore && (
-            <Box mt={1}>
-              {/* <Button variant="outlined" 
-              sx={{ borderRadius: '20px', color: 'black', borderColor:'black' }} 
-              endIcon={<KeyboardBackspaceIcon sx={{ mr: 1 }} />}
-              onClick={handleToggle}>
-                לפרטים נוספים
-              </Button> */}
+              <Box mt={1}>
+                <ShowMoreButton handleTogle={handleToggle} />
+              </Box>
+            )}
 
-              <Button
-                variant="text"
-                sx={{
-                  color: "black",
-                  px: 0,
-                  minWidth: 0,
-                  textTransform: "none",
-                  fontWeight: "bold",
-                  fontSize: "1rem",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  borderBottom: "2px solid #181A20", // קו תחתון
-                  borderRadius: 0,
-                }}
-                onClick={handleToggle}>
-                קרא עוד
-              </Button>
-            </Box>
-          )}
-
-          {/* המשך טקסט נחשף בלחיצה */}
-          {showMore && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
-            >
-              <Typography
-                variant="body1"
-                gutterBottom
-                sx={{ mt: 2, whiteSpace: "pre-line" }}
+            {/* המשך טקסט נחשף בלחיצה */}
+            {showMore && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
               >
-                {homeDecorInfo["paragraph1"]}
-              </Typography>
-              <Button variant="outlined" 
-                sx={{ borderRadius: '20px', color: 'black', borderColor:'black' , mt:3}} 
-                endIcon={<CloseIcon sx={{ mr: 1 }} />} 
-                onClick={handleToggle}>
-                סגור
-              </Button>
-            </motion.div>
-          )}
-
+                <Typography
+                  variant="body1"
+                  gutterBottom
+                  sx={{ mt: 2, whiteSpace: "pre-line" }}
+                >
+                  {homeDecorInfo["paragraph1"]}
+                </Typography>
+                <Button
+                  variant="outlined"
+                  sx={{
+                    borderRadius: "20px",
+                    color: "black",
+                    borderColor: "black",
+                    mt: 3,
+                  }}
+                  endIcon={<CloseIcon sx={{ mr: 1 }} />}
+                  onClick={handleToggle}
+                >
+                  סגור
+                </Button>
+              </motion.div>
+            )}
           </motion.div>
         </Box>
         <Catalog itemData={itemData} />
