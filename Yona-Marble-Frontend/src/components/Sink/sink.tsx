@@ -4,7 +4,6 @@ import { Catalog } from "../Catalog/Catalog";
 import sinkInfo from "../../information/sink/sinkInfo.json";
 import theme from "../../theme";
 import { useState } from "react";
-//import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import CloseIcon from "@mui/icons-material/Close";
 export const Sink = () => {
   const itemData = [
