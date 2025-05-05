@@ -5,6 +5,7 @@ import sinkInfo from "../../information/sink/sinkInfo.json";
 import theme from "../../theme";
 import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
+import { ShowMoreButton } from "../ShowMoreButton/ShowMoreButton";
 export const Sink = () => {
   const itemData = [
     { img: "/images/sinks/סבליין-350-לבן.png", title: "סבליין-350-לבן" },
@@ -40,7 +41,7 @@ export const Sink = () => {
           viewport={{ once: true, amount: 0.6 }}
         >
           <Typography variant="h4" gutterBottom>
-            כיורים{" "}
+            כיורים
           </Typography>
         </motion.div>
 
@@ -66,31 +67,7 @@ export const Sink = () => {
           {/* כפתור לפרטים נוספים */}
           {!showMore && (
             <Box mt={1}>
-              {/* <Button variant="outlined" 
-              sx={{ borderRadius: '20px', color: 'black', borderColor:'black'}} 
-              endIcon={<KeyboardBackspaceIcon sx={{ mr: 1 }} />}
-              onClick={handleToggle}>
-                לפרטים נוספים
-              </Button> */}
-
-              <Button
-                variant="text"
-                sx={{
-                  color: "black",
-                  px: 0,
-                  minWidth: 0,
-                  textTransform: "none",
-                  fontWeight: "bold",
-                  fontSize: "1rem",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  borderBottom: "2px solid #181A20", // קו תחתון
-                  borderRadius: 0,
-                }}
-                onClick={handleToggle}
-              >
-                קרא עוד
-              </Button>
+              <ShowMoreButton handleTogle={handleToggle} />
             </Box>
           )}
 
