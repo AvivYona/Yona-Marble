@@ -9,9 +9,15 @@ import { ShowMoreButton } from "../ShowMoreButton/ShowMoreButton";
 //import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 export const Kitchen = () => {
   const itemData = [
-    { img: "/images/kitchen/catalog_3.webp", title: "מטבח" },
-    { img: "/images/kitchen/catalog_5.webp", title: "מטבח" },
-    { img: "/images/kitchen/catalog_6.webp", title: "מטבח" },
+    { img: "/images/kitchen/catalog_1.jpg", title: "תמונה" },
+    { img: "/images/kitchen/catalog_2.jpg", title: "תמונה" },
+    { img: "/images/kitchen/catalog_3.webp", title: "תמונה" },
+    { img: "/images/kitchen/catalog_4.jpg", title: "תמונה" },
+    { img: "/images/kitchen/catalog_5.webp", title: "תמונה" },
+    { img: "/images/kitchen/catalog_6.webp", title: "תמונה" },
+    { img: "/images/kitchen/catalog_7.jpg", title: "תמונה" },
+    { img: "/images/kitchen/catalog_8.jpg", title: "תמונה" },
+    { img: "/images/kitchen/catalog_9.jpg", title: "תמונה" },
   ];
 
   const [showMore, setShowMore] = useState(false);
