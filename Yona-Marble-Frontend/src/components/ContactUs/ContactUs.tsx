@@ -46,7 +46,7 @@ export const ContactUs = () => {
               sx={{ mt: 2, textAlign: "center" }}
               color={theme.palette.primary.contrastText}
             >
-              פנו אלינו ליעוץ מקצועי
+              פנו אלינו לייעוץ מקצועי
             </Typography>
             <ContactForm />
           </Box>
