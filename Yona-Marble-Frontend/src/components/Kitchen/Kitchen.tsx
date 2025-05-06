@@ -47,7 +47,8 @@ export const Kitchen = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.6 }}
         >
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h4" gutterBottom
+          sx={{fontWeight: 600}}>
             שיש למטבח
           </Typography>
         </motion.div>
