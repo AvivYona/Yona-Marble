@@ -35,6 +35,7 @@ export const MainPage = () => {
               <Box
                 component="img"
                 src={logo}
+                fetchPriority="high"
                 alt="Yona Marble Logo"
                 sx={{
                   width: isSmallScreen ? "70vw" : "30vw",
