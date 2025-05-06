@@ -79,7 +79,7 @@ export const App = () => {
                 overflowX: "hidden",
                 height: "100vh",
                 backgroundImage:
-                  "url('/images/backgrounds/elegant_hand_painted_alcohol_ink_background_with_gold_glitter_0609-min.jpg')",
+                  "url('/images/backgrounds/elegant_hand_painted_alcohol_ink_background_with_gold_glitter_0609-min_Edited.jpg')",
               }}
             >
               <MainPage />

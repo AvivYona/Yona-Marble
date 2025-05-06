@@ -3,7 +3,7 @@ import { styled } from "@mui/system";
 import aboutInfo from "../../information/about/aboutInfo.json";
 import { motion } from "framer-motion";
 import theme from "../../theme";
-import logo from "/images/yona-marble-logo-black.jpeg";
+import logo from "/images/logo-piguet.png";
 import Lottie from "lottie-react";
 import scrollDownAnimation from "../../assets/scrollDown.json";
 
@@ -36,7 +36,15 @@ export const MainPage = () => {
                 component="img"
                 src={logo}
                 alt="Yona Marble Logo"
-                sx={{ width: isSmallScreen ? "70vw" : "30vw" }}
+                sx={{
+                  width: isSmallScreen ? "70vw" : "30vw",
+                  maxWidth: "450px",
+                  maxHeight: "350px",
+                  objectFit: "contain",
+                  margin: "0 auto",
+                  padding: isSmallScreen ? "16px" : "32px",
+                  display: "block",
+                }}
                 mb={5}
               />
             </motion.div>
