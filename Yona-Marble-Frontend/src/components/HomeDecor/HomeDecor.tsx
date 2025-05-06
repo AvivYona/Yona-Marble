@@ -12,6 +12,14 @@ export const HomeDecor = () => {
     { img: "/images/homeDecor/IMG_6528.JPG", title: "image" },
     { img: "/images/homeDecor/roundTable.webp", title: "image" },
     { img: "/images/homeDecor/table.webp", title: "image" },
+    { img: "/images/homeDecor/catalog_1.jpg", title: "image" },
+    { img: "/images/homeDecor/catalog_2.jpg", title: "image" },
+    { img: "/images/homeDecor/catalog_3.jpg", title: "image" },
+    { img: "/images/homeDecor/catalog_4.jpg", title: "image" },
+    { img: "/images/homeDecor/catalog_5.jpg", title: "image" },
+    { img: "/images/homeDecor/catalog_6.jpg", title: "image" },
+    { img: "/images/homeDecor/catalog_7.jpg", title: "image" },
+    { img: "/images/homeDecor/catalog_8.jpg", title: "image" },
   ];
 
   const [showMore, setShowMore] = useState(false);

@@ -3,12 +3,21 @@ import { Catalog } from "../Catalog/Catalog";
 import bathInfo from "../../information/marbleBath/marbleBathInfo.json";
 import { motion } from "framer-motion";
 import theme from "../../theme";
-//import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 import { ShowMoreButton } from "../ShowMoreButton/ShowMoreButton";
 export const Bath = () => {
-  const itemData = [{ img: "/images/bath/bath2.jpeg", title: "image" }];
+  const itemData = [
+    { img: "/images/bath/catalog_1.jpg", title: "image" },
+    { img: "/images/bath/catalog_2.jpg", title: "image" },
+    { img: "/images/bath/catalog_3.jpg", title: "image" },
+    { img: "/images/bath/catalog_4.jpg", title: "image" },
+    { img: "/images/bath/catalog_5.jpg", title: "image" },
+    { img: "/images/bath/catalog_6.jpg", title: "image" },
+    { img: "/images/bath/catalog_7.jpg", title: "image" },
+    { img: "/images/bath/catalog_8.jpg", title: "image" },
+    { img: "/images/bath/catalog_9.jpg", title: "image" },
+  ];
 
   const [showMore, setShowMore] = useState(false);
 
