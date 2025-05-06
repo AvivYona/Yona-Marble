@@ -10,6 +10,9 @@ body {
   --_access-icon-left: unset;
   --_access-icon-right: 10px;
   --_access-icon-bottom: 90px;
+  /* --_access-menu-background-color: #000; */
+  --_access-icon-border-radius: 100%;
+
   --_access-icon-z-index: 9999 !important;
   --_access-icon-display: block !important;
   --_access-icon-visible: visible !important;

@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
+import { Pagination, EffectCoverflow, Autoplay } from "swiper/modules";
 import { useMediaQuery } from "@mui/material";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
@@ -30,9 +30,13 @@ export const Catalog = (props: Props) => {
         >
           <Gallery>
             <Swiper
-              modules={[Navigation, Pagination, EffectCoverflow]}
-              navigation
+              modules={[Pagination, EffectCoverflow, Autoplay]}
               pagination={{ clickable: true }}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: true,
+                pauseOnMouseEnter: true,
+              }}
               loop={true}
               effect="coverflow"
               coverflowEffect={{
