@@ -1,6 +1,5 @@
 import logo from "../../assets/whatsapp.svg";
 import style from "./WhasappIcon.module.css";
-// WhatsAppIcon.tsx
 
 export const WhatsappIcon = () => {
   const text = "שלום%20אשמח%20לקבוע%20פגישת%20התייעצות";
