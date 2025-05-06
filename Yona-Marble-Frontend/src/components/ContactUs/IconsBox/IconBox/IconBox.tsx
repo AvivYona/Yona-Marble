@@ -1,10 +1,9 @@
-import { Box, IconButton, SvgIconTypeMap } from "@mui/material";
-import { OverridableComponent } from "@mui/material/OverridableComponent";
+import { Box, IconButton } from "@mui/material";
 import theme from "../../../../theme";
 
 interface Props {
   href: string;
-  Icon: OverridableComponent<SvgIconTypeMap> & { muiName: string };
+  Icon: React.ElementType;
   additionalInfo: string;
 }
 export const IconBox = (props: Props) => {
