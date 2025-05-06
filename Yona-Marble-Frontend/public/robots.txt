@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yona-marble.com/sitemap.xml
