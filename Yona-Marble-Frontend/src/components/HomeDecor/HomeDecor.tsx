@@ -8,18 +8,18 @@ import { useState } from "react";
 import { ShowMoreButton } from "../ShowMoreButton/ShowMoreButton";
 export const HomeDecor = () => {
   const itemData = [
-    { img: "/images/homeDecor/IMG_6526.JPG", title: "image" },
-    { img: "/images/homeDecor/IMG_6528.JPG", title: "image" },
-    { img: "/images/homeDecor/roundTable.webp", title: "image" },
-    { img: "/images/homeDecor/table.webp", title: "image" },
-    { img: "/images/homeDecor/catalog_1.jpg", title: "image" },
-    { img: "/images/homeDecor/catalog_2.jpg", title: "image" },
-    { img: "/images/homeDecor/catalog_3.jpg", title: "image" },
-    { img: "/images/homeDecor/catalog_4.jpg", title: "image" },
-    { img: "/images/homeDecor/catalog_5.jpg", title: "image" },
-    { img: "/images/homeDecor/catalog_6.jpg", title: "image" },
-    { img: "/images/homeDecor/catalog_7.jpg", title: "image" },
-    { img: "/images/homeDecor/catalog_8.jpg", title: "image" },
+    { img: "/images/homeDecor/IMG_6526.webp", title: "שיש בעיצוב הבית" },
+    { img: "/images/homeDecor/IMG_6528.webp", title: "שיש בעיצוב הבית" },
+    { img: "/images/homeDecor/roundTable.webp", title: "שולחן שיש" },
+    { img: "/images/homeDecor/table.webp", title: "שולחן שיש" },
+    { img: "/images/homeDecor/catalog_1.webp", title: "שיש בעיצוב הבית" },
+    { img: "/images/homeDecor/catalog_2.webp", title: "שיש בעיצוב הבית" },
+    { img: "/images/homeDecor/catalog_3.webp", title: "שיש בעיצוב הבית" },
+    { img: "/images/homeDecor/catalog_4.webp", title: "שיש בעיצוב הבית" },
+    { img: "/images/homeDecor/catalog_5.webp", title: "שיש בעיצוב הבית" },
+    { img: "/images/homeDecor/catalog_6.webp", title: "שיש בעיצוב הבית" },
+    { img: "/images/homeDecor/catalog_7.webp", title: "שיש בעיצוב הבית" },
+    { img: "/images/homeDecor/catalog_8.webp", title: "שיש בעיצוב הבית" },
   ];
 
   const [showMore, setShowMore] = useState(false);

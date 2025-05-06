@@ -8,15 +8,15 @@ import { useState } from "react";
 import { ShowMoreButton } from "../ShowMoreButton/ShowMoreButton";
 export const Bath = () => {
   const itemData = [
-    { img: "/images/bath/catalog_1.jpg", title: "image" },
-    { img: "/images/bath/catalog_2.jpg", title: "image" },
-    { img: "/images/bath/catalog_3.jpg", title: "image" },
-    { img: "/images/bath/catalog_4.jpg", title: "image" },
-    { img: "/images/bath/catalog_5.jpg", title: "image" },
-    { img: "/images/bath/catalog_6.jpg", title: "image" },
-    { img: "/images/bath/catalog_7.jpg", title: "image" },
-    { img: "/images/bath/catalog_8.jpg", title: "image" },
-    { img: "/images/bath/catalog_9.jpg", title: "image" },
+    { img: "/images/bath/catalog_1.webp", title: "שיש לאמבט" },
+    { img: "/images/bath/catalog_2.webp", title: "שיש לאמבט" },
+    { img: "/images/bath/catalog_3.webp", title: "שיש לאמבט" },
+    { img: "/images/bath/catalog_4.webp", title: "שיש לאמבט" },
+    { img: "/images/bath/catalog_5.webp", title: "שיש לאמבט" },
+    { img: "/images/bath/catalog_6.webp", title: "שיש לאמבט" },
+    { img: "/images/bath/catalog_7.webp", title: "שיש לאמבט" },
+    { img: "/images/bath/catalog_8.webp", title: "שיש לאמבט" },
+    { img: "/images/bath/catalog_9.webp", title: "שיש לאמבט" },
   ];
 
   const [showMore, setShowMore] = useState(false);

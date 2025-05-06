@@ -81,7 +81,7 @@ export const Catalog = (props: Props) => {
                           ref={ref}
                           onClick={open}
                           src={item.img}
-                          alt=""
+                          loading="lazy"
                           style={{
                             width: "100%",
                             height: "100%",

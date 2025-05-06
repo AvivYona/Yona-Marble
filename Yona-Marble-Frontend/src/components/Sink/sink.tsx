@@ -8,16 +8,16 @@ import CloseIcon from "@mui/icons-material/Close";
 import { ShowMoreButton } from "../ShowMoreButton/ShowMoreButton";
 export const Sink = () => {
   const itemData = [
-    { img: "/images/sinks/סבליין-350-לבן.png", title: "סבליין-350-לבן" },
-    { img: "/images/sinks/רונדו-לבן.jpeg", title: "רונדו-לבן" },
-    { img: "/images/sinks/פלאון-5.jpeg", title: "פלאון-5" },
-    { img: "/images/sinks/catalog_1.png", title: "כיור" },
-    { img: "/images/sinks/catalog_2.jpg", title: "כיור" },
-    { img: "/images/sinks/catalog_3.jpg", title: "כיור" },
-    { img: "/images/sinks/catalog_4.jpg", title: "כיור" },
-    { img: "/images/sinks/catalog_5.jpg", title: "כיור" },
-    { img: "/images/sinks/catalog_6.jpg", title: "כיור" },
-    { img: "/images/sinks/catalog_7.jpg", title: "כיור" },
+    { img: "/images/sinks/סבליין-350-לבן.webp", title: "סבליין-350-לבן" },
+    { img: "/images/sinks/רונדו-לבן.webp", title: "רונדו-לבן" },
+    { img: "/images/sinks/פלאון-5.webp", title: "פלאון-5" },
+    { img: "/images/sinks/catalog_1.webp", title: "כיור" },
+    { img: "/images/sinks/catalog_2.webp", title: "כיור" },
+    { img: "/images/sinks/catalog_3.webp", title: "כיור" },
+    { img: "/images/sinks/catalog_4.webp", title: "כיור" },
+    { img: "/images/sinks/catalog_5.webp", title: "כיור" },
+    { img: "/images/sinks/catalog_6.webp", title: "כיור" },
+    { img: "/images/sinks/catalog_7.webp", title: "כיור" },
   ];
 
   const [showMore, setShowMore] = useState(false);
