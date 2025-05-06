@@ -8,12 +8,10 @@ import { useState } from "react";
 import { ShowMoreButton } from "../ShowMoreButton/ShowMoreButton";
 export const HomeDecor = () => {
   const itemData = [
-    { img: "/images/homeDecor/IMG_6526.webp", title: "שיש בעיצוב הבית" },
     { img: "/images/homeDecor/IMG_6528.webp", title: "שיש בעיצוב הבית" },
     { img: "/images/homeDecor/roundTable.webp", title: "שולחן שיש" },
     { img: "/images/homeDecor/table.webp", title: "שולחן שיש" },
     { img: "/images/homeDecor/catalog_1.webp", title: "שיש בעיצוב הבית" },
-    { img: "/images/homeDecor/catalog_2.webp", title: "שיש בעיצוב הבית" },
     { img: "/images/homeDecor/catalog_3.webp", title: "שיש בעיצוב הבית" },
     { img: "/images/homeDecor/catalog_4.webp", title: "שיש בעיצוב הבית" },
     { img: "/images/homeDecor/catalog_5.webp", title: "שיש בעיצוב הבית" },
@@ -51,8 +49,7 @@ export const HomeDecor = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.6 }}
           >
-            <Typography variant="h4" gutterBottom
-            sx={{fontWeight: 600}}>
+            <Typography variant="h4" gutterBottom sx={{ fontWeight: 600 }}>
               שיש בעיצוב הבית
             </Typography>
           </motion.div>
