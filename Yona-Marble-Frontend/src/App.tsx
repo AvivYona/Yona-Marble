@@ -17,6 +17,7 @@ import { Sink } from "./components/Sink/sink";
 import { motion } from "framer-motion";
 import { ToastContainer } from "react-toastify";
 import { IconsBox } from "./components/ContactUs/IconsBox/IconsBox";
+import { WhatsappIcon } from "./components/WhatsappIcon/WhatsappIcon";
 
 export const App = () => {
   useEffect(() => {
@@ -89,7 +90,7 @@ export const App = () => {
               <Sink />
               <ContactUs />
             </motion.div>
-
+            <WhatsappIcon />
             <Box
               sx={{
                 position: "fixed",
