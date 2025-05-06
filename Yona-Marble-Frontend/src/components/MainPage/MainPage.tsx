@@ -3,7 +3,7 @@ import { styled } from "@mui/system";
 import aboutInfo from "../../information/about/aboutInfo.json";
 import { motion } from "framer-motion";
 import theme from "../../theme";
-import logo from "/images/logo-piguet.png";
+import logo from "/images/logo-piguet.webp";
 import Lottie from "lottie-react";
 import scrollDownAnimation from "../../assets/scrollDown.json";
 
