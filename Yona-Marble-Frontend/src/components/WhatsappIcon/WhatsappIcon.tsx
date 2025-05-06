@@ -3,7 +3,7 @@ import style from "./WhasappIcon.module.css";
 // WhatsAppIcon.tsx
 
 export const WhatsappIcon = () => {
-  const text = "שלום%20אני%20מעוניין%20במידע%20נוסף";
+  const text = "שלום%אשמח%20לקבוע%20פגישת%20התייעצות";
   return (
     <a
       href={`https://wa.me/972505470523?text=${text}`}
