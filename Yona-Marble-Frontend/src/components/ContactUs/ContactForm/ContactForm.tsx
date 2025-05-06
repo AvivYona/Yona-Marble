@@ -106,12 +106,13 @@ export const ContactForm = () => {
         <TextField
           fullWidth
           label="שם"
-          sx={{ textAlign: "right", color: theme.palette.primary.contrastText }}
+          sx={{ textAlign: "right", color: "theme.palette.primary.contrastText" }}
           name="fullName"
           value={formData.fullName}
           onChange={handleChange}
           error={!!errors.fullName}
           helperText={errors.fullName}
+          placeholder="הכנס שם מלא"
           variant="standard"
           slotProps={{
             input: {
@@ -125,7 +126,7 @@ export const ContactForm = () => {
               sx: {
                 right: 0, // Position the label on the right
                 transformOrigin: "top right", // Align label origin for RTL
-                color: theme.palette.primary.contrastText,
+                color: "gray",
               },
             },
             formHelperText: {
@@ -151,6 +152,7 @@ export const ContactForm = () => {
           onChange={handleChange}
           error={!!errors.phone}
           helperText={errors.phone}
+          placeholder="הכנס מספר טלפון"
           variant="standard"
           slotProps={{
             htmlInput: {
@@ -170,7 +172,7 @@ export const ContactForm = () => {
                 transformOrigin: "top right", // Align label origin for RTL
                 inputMode: "numeric", // Ensures numeric keypad on mobile devices
                 maxLength: 10,
-                color: theme.palette.primary.contrastText,
+                color: "gray",
               },
             },
             formHelperText: {

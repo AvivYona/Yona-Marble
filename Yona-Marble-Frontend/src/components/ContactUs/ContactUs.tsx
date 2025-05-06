@@ -42,8 +42,10 @@ export const ContactUs = () => {
             }}
           >
             <Typography
-              variant="h2"
-              sx={{ mt: 2, textAlign: "center" }}
+              //variant="h3"
+              sx={{ mt: 2, textAlign: "center", 
+              fontSize: "1.9rem",
+              fontWeight: 600 }}
               color={theme.palette.primary.contrastText}
             >
               פנו אלינו לייעוץ מקצועי
