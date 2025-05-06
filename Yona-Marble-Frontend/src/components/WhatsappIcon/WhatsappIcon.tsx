@@ -13,6 +13,8 @@ export const WhatsappIcon = () => {
         position: "fixed",
         bottom: "90px",
         left: "20px",
+        width: "50px",
+        height: "50px",
         zIndex: 9999,
       }}
     >
