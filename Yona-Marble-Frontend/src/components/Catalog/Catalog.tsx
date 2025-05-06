@@ -82,6 +82,7 @@ export const Catalog = (props: Props) => {
                           onClick={open}
                           src={item.img}
                           loading="lazy"
+                          alt={item.title}
                           style={{
                             width: "100%",
                             height: "100%",
