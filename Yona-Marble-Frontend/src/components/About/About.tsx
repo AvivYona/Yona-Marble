@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import aboutInfo from "../../information/about/aboutInfo.json";
 import theme from "../../theme";
+import { Reviews } from "../Reviews/Reviews";
 export const About = () => {
   return (
     <Box

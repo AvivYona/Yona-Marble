@@ -18,6 +18,7 @@ import { motion } from "framer-motion";
 import { ToastContainer } from "react-toastify";
 import { IconsBox } from "./components/ContactUs/IconsBox/IconsBox";
 import { WhatsappIcon } from "./components/WhatsappIcon/WhatsappIcon";
+import { Reviews } from "./components/Reviews/Reviews";
 
 export const App = () => {
   useEffect(() => {
@@ -89,6 +90,7 @@ export const App = () => {
               <HomeDecor />
               <Sink />
               <ContactUs />
+              <Reviews />
             </motion.div>
             <WhatsappIcon />
             <Box
