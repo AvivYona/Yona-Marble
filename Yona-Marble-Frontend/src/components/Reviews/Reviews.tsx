@@ -73,7 +73,8 @@ export const Reviews = () => {
             data-featurable-async
             style={{
               width: "100%",
-              maxHeight: "45px",
+              maxHeight: "15vh",
+              direction: "rtl",
             }}
           />
         </Box>

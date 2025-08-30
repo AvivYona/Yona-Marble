@@ -95,7 +95,6 @@ export const App = () => {
             <WhatsappIcon />
             <Box
               sx={{
-                height: "7vh",
                 position: "fixed",
                 bottom: 0,
                 width: "100vw",
