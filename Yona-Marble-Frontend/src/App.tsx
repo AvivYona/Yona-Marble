@@ -1,3 +1,5 @@
+import { AppBar, Toolbar, IconButton, Menu, MenuItem } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 import style from "./App.module.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import { MainPage } from "./components/MainPage/MainPage";
@@ -12,7 +14,7 @@ import { HomeDecor } from "./components/HomeDecor/HomeDecor";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Accessibility } from "accessibility";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { Sink } from "./components/Sink/sink";
 import { motion } from "framer-motion";
 import { ToastContainer } from "react-toastify";
@@ -21,6 +23,17 @@ import { WhatsappIcon } from "./components/WhatsappIcon/WhatsappIcon";
 import { Reviews } from "./components/Reviews/Reviews";
 
 export const App = () => {
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+  const handleScrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    handleMenuClose();
+  };
   useEffect(() => {
     const accessibilityOptions = {
       labels: {
@@ -69,6 +82,49 @@ export const App = () => {
               position: "relative",
             }}
           >
+            <AppBar
+              position="fixed"
+              sx={{ background: "transparent", boxShadow: "none" }}
+            >
+              <Toolbar sx={{ justifyContent: "flex-end" }}>
+                <IconButton
+                  edge="start"
+                  color="primary"
+                  sx={{
+                    right: 0,
+                    position: "fixed",
+                  }}
+                  onClick={handleMenuOpen}
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Menu
+                  anchorEl={anchorEl}
+                  open={Boolean(anchorEl)}
+                  onClose={handleMenuClose}
+                  sx={{ direction: "rtl" }}
+                >
+                  <MenuItem onClick={() => handleScrollTo("about")}>
+                    אודותינו
+                  </MenuItem>
+                  <MenuItem onClick={() => handleScrollTo("kitchen")}>
+                    שיש למטבח
+                  </MenuItem>
+                  <MenuItem onClick={() => handleScrollTo("bath")}>
+                    שיש לאמבט
+                  </MenuItem>
+                  <MenuItem onClick={() => handleScrollTo("homedecor")}>
+                    עיצוב הבית
+                  </MenuItem>
+                  <MenuItem onClick={() => handleScrollTo("sink")}>
+                    כיורים
+                  </MenuItem>
+                  <MenuItem onClick={() => handleScrollTo("contactus")}>
+                    צרו קשר
+                  </MenuItem>
+                </Menu>
+              </Toolbar>
+            </AppBar>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -83,14 +139,30 @@ export const App = () => {
                   "url('/images/backgrounds/elegant_hand_painted_alcohol_ink_background_with_gold_glitter_0609-min_Edited.webp')",
               }}
             >
-              <MainPage />
-              <About />
-              <Kitchen />
-              <Bath />
-              <HomeDecor />
-              <Sink />
-              <ContactUs />
-              <Reviews />
+              <div id="mainpage">
+                <MainPage />
+              </div>
+              <div id="about">
+                <About />
+              </div>
+              <div id="kitchen">
+                <Kitchen />
+              </div>
+              <div id="bath">
+                <Bath />
+              </div>
+              <div id="homedecor">
+                <HomeDecor />
+              </div>
+              <div id="sink">
+                <Sink />
+              </div>
+              <div id="contactus">
+                <ContactUs />
+              </div>
+              <div id="reviews">
+                <Reviews />
+              </div>
             </motion.div>
             <WhatsappIcon />
             <Box
