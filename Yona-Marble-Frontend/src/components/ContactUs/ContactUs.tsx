@@ -9,7 +9,7 @@ export const ContactUs = () => {
       sx={{
         color: "text.primary",
         p: 4,
-        height: "90vh",
+        mt: 10,
         display: "flex",
         justifyContent: "center",
       }}
@@ -43,9 +43,12 @@ export const ContactUs = () => {
           >
             <Typography
               //variant="h3"
-              sx={{ mt: 2, textAlign: "center", 
-              fontSize: "1.9rem",
-              fontWeight: 600 }}
+              sx={{
+                mt: 2,
+                textAlign: "center",
+                fontSize: "1.9rem",
+                fontWeight: 600,
+              }}
               color={theme.palette.primary.contrastText}
             >
               פנו אלינו לייעוץ מקצועי
