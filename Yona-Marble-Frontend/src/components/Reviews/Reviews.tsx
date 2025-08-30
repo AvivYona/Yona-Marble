@@ -51,11 +51,10 @@ export const Reviews = () => {
             gutterBottom
             sx={{
               fontWeight: 600,
-              mb: isSmallScreen ? 2 : 4,
               fontSize: isSmallScreen ? "1.5rem" : "2rem",
             }}
           >
-            חוות דעת לקוחות
+            אתם ממליצים
           </Typography>
         </motion.div>
 
