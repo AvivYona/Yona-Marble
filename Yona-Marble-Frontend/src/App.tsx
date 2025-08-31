@@ -1,15 +1,3 @@
-import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  Drawer,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  Typography,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
 import style from "./App.module.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import { MainPage } from "./components/MainPage/MainPage";
@@ -24,27 +12,16 @@ import { HomeDecor } from "./components/HomeDecor/HomeDecor";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Accessibility } from "accessibility";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Sink } from "./components/Sink/sink";
 import { motion } from "framer-motion";
 import { ToastContainer } from "react-toastify";
 import { IconsBox } from "./components/ContactUs/IconsBox/IconsBox";
 import { WhatsappIcon } from "./components/WhatsappIcon/WhatsappIcon";
 import { Reviews } from "./components/Reviews/Reviews";
+import { NavSideBar } from "./components/NavSideBar/NavSideBar";
 
 export const App = () => {
-  const [drawerOpen, setDrawerOpen] = React.useState(false);
-
-  const openDrawer = () => {
-    setDrawerOpen(true);
-  };
-  const closeDrawer = () => {
-    setDrawerOpen(false);
-  };
-  const handleScrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    closeDrawer();
-  };
   useEffect(() => {
     const accessibilityOptions = {
       labels: {
@@ -86,6 +63,7 @@ export const App = () => {
         <Router>
           <Analytics />
           <SpeedInsights />
+          <NavSideBar />
           <Box
             sx={{
               backgroundRepeat: "repeat-y",
@@ -93,171 +71,6 @@ export const App = () => {
               position: "relative",
             }}
           >
-            <AppBar
-              position="fixed"
-              sx={{ background: "transparent", boxShadow: "none" }}
-            >
-              <Toolbar sx={{ justifyContent: "flex-end" }}>
-                <IconButton
-                  edge="start"
-                  color="primary"
-                  sx={{
-                    right: 0,
-                    position: "fixed",
-                  }}
-                  onClick={openDrawer}
-                >
-                  <MenuIcon />
-                </IconButton>
-                <Drawer
-                  anchor="right"
-                  open={drawerOpen}
-                  onClose={closeDrawer}
-                  PaperProps={{
-                    sx: {
-                      backgroundColor: "rgba(250,250,250,0.95)",
-                      color: "#222",
-                      width: 220,
-                      height: "auto",
-                    },
-                    dir: "rtl",
-                  }}
-                >
-                  <List sx={{ direction: "rtl" }}>
-                    <ListItem disablePadding>
-                      <ListItemButton onClick={() => handleScrollTo("about")}>
-                        <ListItemText>
-                          <motion.div
-                            whileHover={{ backgroundColor: "rgba(0,0,0,0.05)" }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                            style={{ textAlign: "right" }}
-                          >
-                            <Typography
-                              variant="h6"
-                              sx={{ p: 1, textAlign: "right" }}
-                            >
-                              אודותינו
-                            </Typography>
-                          </motion.div>
-                        </ListItemText>
-                      </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                      <ListItemButton onClick={() => handleScrollTo("kitchen")}>
-                        <ListItemText>
-                          <motion.div
-                            whileHover={{ backgroundColor: "rgba(0,0,0,0.05)" }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                            style={{ textAlign: "right" }}
-                          >
-                            <Typography
-                              variant="h6"
-                              sx={{ p: 1, textAlign: "right" }}
-                            >
-                              שיש למטבח
-                            </Typography>
-                          </motion.div>
-                        </ListItemText>
-                      </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                      <ListItemButton onClick={() => handleScrollTo("bath")}>
-                        <ListItemText>
-                          <motion.div
-                            whileHover={{ backgroundColor: "rgba(0,0,0,0.05)" }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                            style={{ textAlign: "right" }}
-                          >
-                            <Typography
-                              variant="h6"
-                              sx={{ p: 1, textAlign: "right" }}
-                            >
-                              שיש לאמבט
-                            </Typography>
-                          </motion.div>
-                        </ListItemText>
-                      </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                      <ListItemButton
-                        onClick={() => handleScrollTo("homedecor")}
-                      >
-                        <ListItemText>
-                          <motion.div
-                            whileHover={{ backgroundColor: "rgba(0,0,0,0.05)" }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                            style={{ textAlign: "right" }}
-                          >
-                            <Typography
-                              variant="h6"
-                              sx={{ p: 1, textAlign: "right" }}
-                            >
-                              עיצוב הבית
-                            </Typography>
-                          </motion.div>
-                        </ListItemText>
-                      </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                      <ListItemButton onClick={() => handleScrollTo("sink")}>
-                        <ListItemText>
-                          <motion.div
-                            whileHover={{ backgroundColor: "rgba(0,0,0,0.05)" }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                            style={{ textAlign: "right" }}
-                          >
-                            <Typography
-                              variant="h6"
-                              sx={{ p: 1, textAlign: "right" }}
-                            >
-                              כיורים
-                            </Typography>
-                          </motion.div>
-                        </ListItemText>
-                      </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                      <ListItemButton
-                        onClick={() => handleScrollTo("contactus")}
-                      >
-                        <ListItemText>
-                          <motion.div
-                            whileHover={{ backgroundColor: "rgba(0,0,0,0.05)" }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                            style={{ textAlign: "right" }}
-                          >
-                            <Typography
-                              variant="h6"
-                              sx={{ p: 1, textAlign: "right" }}
-                            >
-                              צרו קשר
-                            </Typography>
-                          </motion.div>
-                        </ListItemText>
-                      </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                      <ListItemButton onClick={() => handleScrollTo("reviews")}>
-                        <ListItemText>
-                          <motion.div
-                            whileHover={{ backgroundColor: "rgba(0,0,0,0.05)" }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                            style={{ textAlign: "right" }}
-                          >
-                            <Typography
-                              variant="h6"
-                              sx={{ p: 1, textAlign: "right" }}
-                            >
-                              ביקורות
-                            </Typography>
-                          </motion.div>
-                        </ListItemText>
-                      </ListItemButton>
-                    </ListItem>
-                  </List>
-                </Drawer>
-              </Toolbar>
-            </AppBar>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
