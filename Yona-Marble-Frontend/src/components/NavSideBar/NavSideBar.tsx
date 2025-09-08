@@ -32,9 +32,9 @@ export const NavSideBar = () => {
       <Toolbar sx={{ justifyContent: "flex-end" }}>
         <IconButton
           edge="start"
-          color="primary"
           sx={{
-            right: 0,
+            right: 15,
+            color:"black",
             position: "fixed",
           }}
           onClick={openDrawer}
