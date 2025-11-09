@@ -27,19 +27,21 @@ export const NavSideBar = () => {
   return (
     <AppBar
       position="fixed"
-      sx={{ background: "transparent", boxShadow: "none" }}
+      sx={{ background: "transparent", boxShadow: "none", width: "5vmax" }}
     >
       <Toolbar sx={{ justifyContent: "flex-end" }}>
         <IconButton
           edge="start"
           sx={{
             right: 15,
-            color:"black",
+            color: "black",
             position: "fixed",
+            width: "5vmax",
           }}
           onClick={openDrawer}
+          
         >
-          <MenuIcon />
+          <MenuIcon sx={{ width: "5vmax", height: "5vmax" }} />
         </IconButton>
         <Drawer
           anchor="right"
